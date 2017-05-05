@@ -10,6 +10,7 @@ import java.util.*;
 import java.text.*;
 import javax.swing.*;
 import java.io.*;
+
 public class Score
 {
     /** Instance Variables **/
@@ -59,6 +60,87 @@ public class Score
     }
     
     /**
+     * The method used to write to the file
+     * @param String fileName: The file to write the content to
+     * @param String content: What you want to write to the file
+     * @return none START HERE TO CLEAN STUFF UP
+     */
+    private void writeToFile (String fileName, String content) {
+        BufferedWriter bw = null;
+        FileWriter fw = null;
+
+        try {
+            //Gets the file to write the info into
+            fw = new FileWriter(fileName);
+            bw = new BufferedWriter(fw);
+            
+            //Writes the content into the file with newLines where appropriate
+            while (content.indexOf("\n") >= 0){
+                //Writes the given info into the file up to the newLine
+                bw.write(content.substring(0, content.indexOf("\n")));
+                
+                //Adds the newLine
+                bw.newLine();
+                
+                //Slices down the size of content to not include whatever
+                //was just writen into the file.
+                content = content.substring(content.indexOf("\n")+1, content.length());
+            }
+            
+        } catch (IOException e) {
+            //Says if there's an error
+            e.printStackTrace();
+        } finally {
+            try {
+                //Closes the file
+                if (bw != null)
+                    bw.close();
+
+                if (fw != null)
+                    fw.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }    
+    
+    /**
+     * Adds a score to the topScores array, then writes the array to the file.
+     * Is private, because I only want to write scores if the checkScore says
+     * it's appropriate. It will add the score in there if it should be added.
+     * @param none
+     * @return none
+     */
+    private void addScore(){
+        //Makes a tempScore and tempName for swaps (also a holdScore & holdName, 
+        //so that I can change it w/o changing the actual score & name).
+        String tempName;
+        String holdName = name.substring(0);
+        int tempScore;
+        int holdScore = score;
+        
+        //Sees to see where in top scores it belongs
+        for (int i = 1; i < topScores.length; i += 2){
+            
+            //If score is higher than the one in the list, pushes everything down
+            if (topScores[i] < holdScore){
+                //Gets the information from the list
+                tempScore = topScores[i];
+                tempName = topScores[i-1];
+                
+                //Assigns the holdScore and holdName to the list
+                topScores[i] = holdScore;
+                topScores[i-1] = holdName;
+                
+                //Assigns the temps to the holds (now, this means that once the original holdScore
+                //and holdName are added to the list, everything will get pushed down from there).
+                holdScore = tempScore;
+                holdName = tempName.substring(0);
+            }
+        }
+    }
+    
+    /**
      * Sees if score is a top score
      * @param none
      * @return none
@@ -72,5 +154,8 @@ public class Score
                 isTop = true;
             }
         }
+        
+        if (isTop == true); //START HERE WITH THE PRIVATE METHOD
     }
+    
 }
