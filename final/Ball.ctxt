@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=mass2\ type2
+comment0.target=Ball(int,\ java.lang.String)
+comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ Ball\r\n
+comment1.params=type2
+comment1.target=void\ settype(java.lang.String)
+comment2.params=mass2
+comment2.target=void\ setmass(int)
+comment3.params=
+comment3.target=java.lang.String\ gettype()
+comment4.params=
+comment4.target=int\ getmass()
+numComments=5
