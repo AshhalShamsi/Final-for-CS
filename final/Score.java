@@ -24,9 +24,9 @@ public class Score
      * @param none
      * @return You must be kidding me, it's a constructor.
      */
-    public Score(){
+    public Score() throws IOException{
         score = 0; //Sets initial score
-        name = null; //Sets initial name (which is nonexistant)
+        name = "No1"; //Sets initial name (which is nonexistant: No1 = No-one)
         
         //Alright, here's the fun part:
         //Gets info from the topScores file about the other topScores
@@ -49,6 +49,33 @@ public class Score
     public void add(){
         score += 1;
     }
+    
+    /**
+     * Gets the score
+     * @param none
+     * @return int Player's current score
+     */
+    public int getScore(){
+        return score;
+    }
+    
+    /**
+     * Gets the name
+     * @param none
+     * @return String player name
+     */
+    public String getName(){
+        return name;
+    }
+    
+    /**
+     * Changes the name
+     * @param String player's new name
+     * @return none
+     */
+    public void setName(String name){
+        this.name = name;
+    }
 
     /**
      * Resets score to 0 (to be used when shot missed
@@ -63,7 +90,7 @@ public class Score
      * The method used to write to the file
      * @param String fileName: The file to write the content to
      * @param String content: What you want to write to the file
-     * @return none START HERE TO CLEAN STUFF UP
+     * @return none
      */
     private void writeToFile (String fileName, String content) {
         BufferedWriter bw = null;
@@ -115,15 +142,15 @@ public class Score
         //Makes a tempScore and tempName for swaps (also a holdScore & holdName, 
         //so that I can change it w/o changing the actual score & name).
         String tempName;
-        String holdName = name.substring(0);
-        int tempScore;
-        int holdScore = score;
+        String holdName = name.substring(0, name.length());
+        String tempScore;
+        String holdScore = "" + score;
         
         //Sees to see where in top scores it belongs
         for (int i = 1; i < topScores.length; i += 2){
             
             //If score is higher than the one in the list, pushes everything down
-            if (topScores[i] < holdScore){
+            if (Integer.parseInt(topScores[i]) < Integer.parseInt(holdScore)){
                 //Gets the information from the list
                 tempScore = topScores[i];
                 tempName = topScores[i-1];
@@ -138,6 +165,10 @@ public class Score
                 holdName = tempName.substring(0);
             }
         }
+        
+        //Since we've changed the list, write the new topScore list to the file
+        String info = this.toString();
+        this.writeToFile("topScores.txt", info);
     }
     
     /**
@@ -149,13 +180,31 @@ public class Score
         boolean isTop = false; //To see if the current score is higher than any score in list
                                //Note: If equal to, earlier score remains higher
         
-        for (int i = 1; i < topScore.length; i += 2){
-            if (topScore[i].parseInt() < score){
+        for (int i = 1; i < topScores.length; i += 2){
+            if (Integer.parseInt(topScores[i]) < score){
                 isTop = true;
             }
         }
         
-        if (isTop == true); //START HERE WITH THE PRIVATE METHOD
+        if (isTop == true){
+            this.addScore(); //Adds the new score into scores
+        }
     }
+    
+    /**
+     * Gets all of the topScores into a string
+     * @param none
+     * @return none
+     */
+    public String toString(){
+        String info = topScores[0];
+        
+        for (int i = 1; i < topScores.length; i++){
+            info += ("\n" + topScores[i]);
+        }
+        
+        return info;
+    }
+    
     
 }
