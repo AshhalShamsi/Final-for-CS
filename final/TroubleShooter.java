@@ -14,19 +14,23 @@ public class TroubleShooter
 {
     public static void main(String[] args) throws IOException{
         
-        /**TROUBLE-SHOOTING SCORE CLASS**/
+        /**TROUBLE-SHOOTING SCORE CLASS**/ //It works now!
+        /**
         Score testScore = new Score();
         
         System.out.println(testScore.getScore());
-        for (int i = 1; i <= 10; i++)
+        for (int i = 1; i <= 5; i++)
             testScore.add();
             
         System.out.println(testScore.getScore());
-        testScore.setName("Ashhal");
+        System.out.println(testScore);
+        
+        testScore.setName("Isabella");
         testScore.checkScore();
         testScore.reset();
         System.out.println(testScore.getScore());
         System.out.println(testScore);
+        /**/
         
     }
 }

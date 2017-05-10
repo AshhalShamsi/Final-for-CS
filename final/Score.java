@@ -104,6 +104,7 @@ public class Score
             //Writes the content into the file with newLines where appropriate
             while (content.indexOf("\n") >= 0){
                 //Writes the given info into the file up to the newLine
+                System.out.println(content.substring(0, content.indexOf("\n")));
                 bw.write(content.substring(0, content.indexOf("\n")));
                 
                 //Adds the newLine
@@ -180,7 +181,9 @@ public class Score
         boolean isTop = false; //To see if the current score is higher than any score in list
                                //Note: If equal to, earlier score remains higher
         
+        System.out.println(topScores);
         for (int i = 1; i < topScores.length; i += 2){
+            System.out.println(topScores[i]);
             if (Integer.parseInt(topScores[i]) < score){
                 isTop = true;
             }
@@ -197,10 +200,10 @@ public class Score
      * @return none
      */
     public String toString(){
-        String info = topScores[0];
+        String info = "";//topScores[0];
         
-        for (int i = 1; i < topScores.length; i++){
-            info += ("\n" + topScores[i]);
+        for (int i = 0; i < topScores.length; i++){
+            info += (topScores[i] + "\n");
         }
         
         return info;
