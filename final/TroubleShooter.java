@@ -32,5 +32,18 @@ public class TroubleShooter
         System.out.println(testScore);
         /**/
         
+        /**WIND TROUBLE-SHOOT (Not complicated)**/ //It worked first try!
+        /**
+
+        Wind test = new Wind();
+        System.out.println(test.getSpeed());
+        System.out.println(test);
+        
+        for (int i = 0; i < 10; i++){
+            System.out.println(test.changeSpeed());
+        }
+        **/
+        
+        
     }
 }

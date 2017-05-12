@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Wind()
+comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ Wind\r\n\ @param\ none\r\n
+comment1.params=
+comment1.target=int\ getSpeed()
+comment1.text=\r\n\ Gets\ the\ wind\ speed\r\n\ @param\ none\r\n\ @return\ int\ the\ wind\ speed\r\n
+comment2.params=
+comment2.target=int\ changeSpeed()
+comment2.text=\r\n\ Changes\ the\ wind\ speed\ randomly\ and\ will\ return\ the\ new\ windspeed\r\n\ @param\ none\r\n\ @return\ int\ the\ new\ wind\ speed\r\n
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment3.text=\r\n\ toString\:\ Returns\ the\ speed\ in\ a\ String\r\n\ @param\ none\r\n\ @return\ String\ the\ speed\r\n
+numComments=4
