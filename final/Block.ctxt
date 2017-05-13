@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=x\ y\ z\ desc
+comment0.target=Block(double,\ double,\ double,\ java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Block\r\n
+comment1.params=
+comment1.target=void\ disappear()
+comment1.text=\r\n\ Make\ the\ block\ disappear\r\n
+comment2.params=
+comment2.target=java.lang.String\ getDesc()
+comment2.text=\r\n\ Accessor\ for\ the\ block's\ description\r\n
+comment3.params=
+comment3.target=double\ getX()
+comment3.text=\r\n\ Accessor\ for\ the\ block's\ location\r\n
+comment4.params=
+comment4.target=double\ getY()
+comment4.text=\r\n\ Accessor\ for\ the\ block's\ location\r\n
+comment5.params=
+comment5.target=double\ getZ()
+comment5.text=\r\n\ Accessor\ for\ the\ block's\ location\r\n
+comment6.params=
+comment6.target=double\ getScale()
+comment6.text=\r\n\ Accessor\ for\ the\ block's\ size\r\n
+numComments=7
