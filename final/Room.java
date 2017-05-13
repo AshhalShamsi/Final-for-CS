@@ -75,7 +75,7 @@ public class Room
         textureNorth = fileName;
     }
     
-    private void setCurrentRoom(Env env)
+    public void setCurrentRoom(Env env)
     {
         if (this != null) {
             currentRoom = this;
