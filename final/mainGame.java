@@ -25,7 +25,7 @@ public class mainGame
         room.setTextureSouth("textures/bricks.jpg");
         room.setTextureWest("textures/bricks.jpg");
         stuff = new Objc("models/test/test.jpg", "models/test/test.obj", 10,10,10);
-        stuff2 = new Objc("models/test/test.jpg","models/trash/trash.obj",5,2,5);
+        stuff2 = new Objc("models/test/test.jpg","models/trash/trash.obj",5,8,5);
         ball1 = new Ball(512, "models/test/test.jpg", 5, 2, 8, 1 );
     }
 
@@ -51,8 +51,8 @@ public class mainGame
         env.addObject(ball1);
         while (true)
         {
-            ball1.setxyz(env.getCameraX()+5, env.getCameraY(), env.getCameraZ());
-            ball1.setYaw(env.getCameraYaw());
+            ball1.setxyz(env.getCameraX()+(5*Math.cos(env.getCameraPitch()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.sin(env.getCameraYaw()*Math.PI/180)));
+            //ball1.setYaw(env.getCameraYaw());
             env.advanceOneFrame();
             // Position the camera
             
