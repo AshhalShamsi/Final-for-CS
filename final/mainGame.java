@@ -41,24 +41,26 @@ public class mainGame
         // put your code here
         // Position the camera
         env = new Env();
+        boolean finished = false;
         fidget.setscale(1);
         room.setCurrentRoom(env);
         env.setCameraXYZ(5, 13, 9);        
-        env.setCameraPitch(-50);
+        System.out.println(env.getCameraPitch());
         // Disable mouse and camera control
         env.setDefaultControl(true);
-        //stuff.setRoomDim(room.getWidth(), room.getDepth());     
-        //env.addObject(stuff);
-        //env.addObject(stuff2);
-        //env.addObject(ball1);
-        env.addObject(fidget);
-        while (true)
+        stuff.setRoomDim(room.getWidth(), room.getDepth());     
+        env.addObject(stuff);
+        env.addObject(stuff2);
+        env.addObject(ball1);
+        //env.addObject(fidget);
+        while (!finished)
         {
-            ball1.setxyz(env.getCameraX()+(5*Math.cos(env.getCameraPitch()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.sin(env.getCameraYaw()*Math.PI/180)));
+            ball1.setxyz(env.getCameraX()+(5*Math.cos(env.getCameraPitch()*Math.PI/180) * Math.cos(env.getCameraYaw()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getCameraPitch()*Math.PI/180)*Math.sin(env.getCameraYaw()*Math.PI/180)));
             //ball1.setYaw(env.getCameraYaw());
             env.advanceOneFrame();
             // Position the camera
             
         }
+        env.exit();
     }
 }
