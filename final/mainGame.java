@@ -12,7 +12,7 @@ public class mainGame
     // instance variables - replace the example below with your own
     private Env env;
     private Room room;
-    private Objc stuff, stuff2;
+    private Objc stuff, stuff2, fidget;
     private Ball ball1;
     /**
      * Constructor for objects of class mainGame
@@ -27,6 +27,7 @@ public class mainGame
         stuff = new Objc("models/test/test.jpg", "models/test/test.obj", 10,10,10);
         stuff2 = new Objc("models/test/test.jpg","models/trash/trash.obj",5,8,5);
         ball1 = new Ball(512, "models/test/test.jpg", 5, 2, 8, 1 );
+        fidget = new Objc("models/test/test.jpg","models/fidget/fidget.obj",5,2,5);
     }
 
     /**
@@ -40,15 +41,17 @@ public class mainGame
         // put your code here
         // Position the camera
         env = new Env();
+        fidget.setscale(1);
         room.setCurrentRoom(env);
         env.setCameraXYZ(5, 13, 9);        
         env.setCameraPitch(-50);
         // Disable mouse and camera control
         env.setDefaultControl(true);
         //stuff.setRoomDim(room.getWidth(), room.getDepth());     
-        env.addObject(stuff);
-        env.addObject(stuff2);
-        env.addObject(ball1);
+        //env.addObject(stuff);
+        //env.addObject(stuff2);
+        //env.addObject(ball1);
+        env.addObject(fidget);
         while (true)
         {
             ball1.setxyz(env.getCameraX()+(5*Math.cos(env.getCameraPitch()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.sin(env.getCameraYaw()*Math.PI/180)));

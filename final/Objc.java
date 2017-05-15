@@ -7,7 +7,7 @@
  */
 public class Objc
 {
-    private double x,y,z, roomWidth, roomDepth;
+    private double x,y,z, roomWidth, roomDepth, scale;
     private String texture, model;
     public Objc(String txt, String mod, double e, double f, double g)
     {
@@ -16,9 +16,16 @@ public class Objc
         z = g;
         texture = txt;
         model = mod;
-       
+        scale = 1;
     }
-
+    
+    public double setscale(double num)
+    {
+        double rekt = scale;
+        scale = num;
+        return rekt;
+        
+    }
      /**
      * Set the dimension of the room Doty is in
      */
