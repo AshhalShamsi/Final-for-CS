@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import env3d.Env;
 import org.lwjgl.input.Keyboard;
+import java.util.*;
 /**
  * Write a description of class mainGame here.
  * 
@@ -57,7 +58,7 @@ public class mainGame
         //env.addObject(fidget);
         while (env.getKey() != 1)
         {
-            ball1.setxyz(env.getCameraX()+(5*Math.cos(env.getCameraPitch()*Math.PI/180) * Math.cos(env.getCameraYaw()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getCameraPitch()*Math.PI/180)*Math.sin(env.getCameraYaw()*Math.PI/180)));
+            ball1.setxyz(env.getCameraX()+(5*Math.cos(env.getCameraPitch()*Math.PI/180)*Math.sin(env.getCameraYaw()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getCameraPitch()*Math.PI/180) * Math.cos(env.getCameraYaw()*Math.PI/180)));
             //ball1.setYaw(env.getCameraYaw());
             env.advanceOneFrame();
             // Position the camera
