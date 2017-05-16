@@ -10,7 +10,7 @@ public class Room
 {
     // Must have these fields for Env to reconize this room
     private double width, height, depth;
-    private String textureNorth, textureSouth, textureEast, textureWest;
+    private String textureNorth, textureSouth, textureEast, textureWest,textureTop, textureBottom;
  
     // Some additional fields for the game
     private String description;
@@ -32,7 +32,8 @@ public class Room
         textureEast = "textures/fence0.png"; 
         textureSouth = "textures/fence0.png"; 
         textureWest =  "textures/fence0.png"; 
-         
+        textureTop = "textures/fence0.png"; 
+        textureBottom = "textures/fence0.png"; 
         blocks = new ArrayList<Block>();
         exits = new HashMap<String, Room>();
     }
@@ -74,6 +75,23 @@ public class Room
     {
         textureNorth = fileName;
     }
+    
+     /**
+     * Mutator for the wall texture
+     */
+    public void setTextureBottom(String fileName)
+    {
+        textureBottom = fileName;
+    }
+    
+     /**
+     * Mutator for the wall texture
+     */
+    public void setTextureTop(String fileName)
+    {
+        textureTop = fileName;
+    }
+    
     
     public void setCurrentRoom(Env env)
     {
