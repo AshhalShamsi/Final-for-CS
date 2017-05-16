@@ -44,6 +44,20 @@ public class TroubleShooter
         }
         **/
         
+        /**INSTRUCTIONS TROUBLE-SHOOT (Not complicated either, but static. It works)**/
+        /**/
+        Instructions.setUp();
+        System.out.println(Instructions.getPage());
+        System.out.println(Instructions.next());
+        System.out.println(Instructions.next());
+        System.out.println(Instructions.next());
+        System.out.println(Instructions.next());
+        System.out.println(Instructions.next());
+        System.out.println(Instructions.previous());
+        System.out.println(Instructions.getPageNumber());
+        
+        /**/
+        
         
     }
 }
