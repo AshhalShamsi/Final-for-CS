@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=x\ y\ z
+comment0.target=Intensity_1(double,\ double,\ double)
+comment0.text=\r\n\ Constructor\ for\ Intensity\r\n\ @param\ double\ -->\ the\ x\ coordinate\r\n\ @param\ double\ -->\ the\ y\ coordinate\r\n\ @param\ double\ -->\ the\ z\ coordinate\r\n\ A\ model\ and\ texture\ should\ still\ be\ used,\ but\r\n\ the\ color\ can\ be\ constant,\ and\ I\ was\ thinking\r\n\ that\ the\ model\ could\ be\ an\ arrow\ (it\ getting\r\n\ bigger\ will\ be\ getting\ more\ &\ less\ intense);\r\n
+comment1.params=
+comment1.target=void\ increase()
+comment1.text=\r\n\ Increases\ the\ intensity\ by\ 1\r\n\ NOTE\ TO\ SELF\:\ Maybe\ include\ a\ maximum\ intensity\r\n\ @param\ none\r\n\ @return\ none\r\n
+numComments=2
