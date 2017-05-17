@@ -13,7 +13,7 @@ public class mainGame
     // instance variables - replace the example below with your own
     private Env env;
     private Room room;
-    private Objc stuff, stuff2, fidget;
+    private Objc stuff, stuff2, fidget, test;
     private Ball ball1;
     /**
      * Constructor for objects of class mainGame
@@ -31,6 +31,8 @@ public class mainGame
         stuff2 = new Objc("models/test/test.jpg","models/trash/trash.obj",5,8,5);
         ball1 = new Ball(512, "models/test/test.jpg", 5, 2, 8, 1 );
         fidget = new Objc("models/test/test.jpg","models/fidget/fidget.obj",5,2,5);
+        
+        test = new Intensity_1(13, 13, 13);
     }
 
     /**
@@ -55,6 +57,7 @@ public class mainGame
         env.addObject(stuff);
         env.addObject(stuff2);
         env.addObject(ball1);
+        env.addObject(test);
         //env.addObject(fidget);
         while (env.getKey() != 1)
         {

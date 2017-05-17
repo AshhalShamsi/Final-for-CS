@@ -45,7 +45,7 @@ public class TroubleShooter
         **/
         
         /**INSTRUCTIONS TROUBLE-SHOOT (Not complicated either, but static. It works)**/
-        /**/
+        /**
         Instructions.setUp();
         System.out.println(Instructions.getPage());
         System.out.println(Instructions.next());
@@ -55,8 +55,16 @@ public class TroubleShooter
         System.out.println(Instructions.next());
         System.out.println(Instructions.previous());
         System.out.println(Instructions.getPageNumber());
-        
         /**/
+        
+        /**INTENSITY TROUBLE-SHOOT**/
+        Intensity_1 testI = new Intensity_1(5, 5, 5);
+        System.out.println(testI.getIntensity());
+        testI.decrease();
+        System.out.println(testI.getIntensity());
+        testI.increase(); testI.increase();
+        System.out.println(testI.getIntensity());
+        System.out.println(testI.getX());
         
         
     }

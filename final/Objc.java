@@ -91,7 +91,7 @@ public class Objc
     
     /**
      * Payton here --> Sets all the coordinates at once (in case you're moving
-     * in more than one direction)
+     * in more than one direction at the same time for convinence reasons)
      * @param double --> The new x coordinate
      * @param double --> The new y coordinate
      * @param double --> The new z coordinate

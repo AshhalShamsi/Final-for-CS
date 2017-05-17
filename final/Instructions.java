@@ -27,7 +27,7 @@ public class Instructions
         
         //page3 = the third page of instructions
         String page3 = "Now, an intensity bar should be displayed. Use the up and down arrow keys to \n";
-        page3 += "increase or decrease the intensity of your throw. \n\nHit space once you're at the right ";
+        page3 += "increase or decrease the intensity of your throw.\n\nHit space once you're at the right ";
         page3 += "intensity.";
         
         //page4 = the fourth page of instructions
@@ -42,15 +42,6 @@ public class Instructions
         //myPage = What instruction page I'm currently on.
         //Remember 0 = page 1, 1 = page 2...
         myPage = 0;
-    }
-
-    /**
-     * Default constructor for objects of class Instructions
-     * @param none
-     */
-    public Instructions()
-    {
-        
     }
 
     /**

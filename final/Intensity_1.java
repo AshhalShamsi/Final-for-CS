@@ -21,8 +21,9 @@ public class Intensity_1 extends Objc
      */
     public Intensity_1(double x, double y, double z)
     {
-        //Right now, the texture is a solid green sheet. Can change
-        super("models/test/test.jpg", "GET MODEL FOR UPWARDS ARROW", x, y, z);
+        //Right now, the texture is a solid green sheet. Can change.
+        //NEED AN UPWARDS ARROW MODEL For now using a different one
+        super("textures/terrain/alpha.png", "models/arrows/arrow4.obj", x, y, z);
         
         //Default intensity -- User will change
         //NOTE: We can use larger or smaller numbers,
@@ -33,13 +34,41 @@ public class Intensity_1 extends Objc
     }
 
     /**
-     * Increases the intensity by 1
-     * NOTE TO SELF: Maybe include a maximum intensity
+     * Increases the intensity by 1 (can change amount later)
+     * NOTE TO SELF: Maybe include a maximum intensity. Ask Ashhal what will work physics-wise
      * @param none
      * @return none
      */
     public void increase(){
         intensity += 1;
+        
+        //Changes the size of the intensity-indicator (the arrow)
+        //so that the user knows that their intensity is changing
+        super.setscale(((double)intensity) / 10.0);
+    }
+    
+    /**
+     * Decreases intensity by 1
+     * RIGHT NOW Minimum intensity is 0. Can change in future.
+     * @param none
+     * @return none
+     */
+    public void decrease(){
+        if (intensity > 0)
+            intensity -= 1;
+        
+        //Changes the size of the intensity-indicator (the arrow)
+        //so that the user knows that their intensity is changing
+        super.setscale(((double)intensity) / 10.0);        
+    }
+    
+    /**
+     * Gets the intensity
+     * @param none
+     * @return int (double? check with Ashhal) --> The intensity level
+     */
+    public int getIntensity(){
+        return intensity;
     }
 
 }
