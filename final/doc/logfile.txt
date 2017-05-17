@@ -1,14 +1,24 @@
-Project documentation
+Class documentation
 <---- javadoc command: ---->
-C:\Program Files (x86)\BlueJ\jdk\bin\javadoc.exe
--sourcepath
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final
+C:\Program Files\Java\jdk1.8.0_101\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-private
+-tag
+pre:a:Precondition:
+-tag
+post:a:Postcondition:
+-noindex
+-notree
+-nohelp
+-nonavbar
 -source
 1.8
 -classpath
-C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.8.2.jar;C:\Users\Dragonstorm24\Desktop\APCS pic project\ColorLabs\bookClasses;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\extensions\lib;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\bluejext.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\env3d_jme3.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\eventbus.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\gluegen-rt.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\j-ogg-oggd.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\j-ogg-vorbisd.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jbullet.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jinput.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jME3-blender.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jME3-core.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jME3-desktop.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jME3-effects.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jME3-jbullet.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jME3-jogg.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jME3-lwjgl-natives.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jME3-lwjgl.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jME3-networking.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jME3-niftygui.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jME3-plugins.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jME3-terrain.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\jMonkeyEngine3.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\lwjgl.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\nifty-default-controls.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\nifty-style-black.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\nifty.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\rsyntaxtextarea.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\stack-alloc.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\vecmath.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\+libs\xmlpull-xpp3.jar;C:\Users\Dragonstorm24\Desktop\Final-for-CS\final
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.8.2.jar;C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses;C:\Users\aashamsi\Desktop\env3d_template\extensions;C:\Users\aashamsi\Desktop\env3d_template\+libs;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\bluejext.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\env3d_jme3.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\eventbus.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\gluegen-rt.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\j-ogg-oggd.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\j-ogg-vorbisd.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jbullet.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jinput.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jME3-blender.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jME3-core.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jME3-desktop.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jME3-effects.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jME3-jbullet.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jME3-jogg.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jME3-lwjgl-natives.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jME3-lwjgl.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jME3-networking.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jME3-niftygui.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jME3-plugins.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jME3-terrain.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\jMonkeyEngine3.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\lwjgl.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\nifty-default-controls.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\nifty-style-black.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\nifty.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\rsyntaxtextarea.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\stack-alloc.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\vecmath.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\+libs\xmlpull-xpp3.jar;C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final
 -d
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc
+C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\doc
 -encoding
 UTF-8
 -charset
@@ -17,80 +27,294 @@ UTF-8
 C:\Program Files (x86)\BlueJ\lib\bjdoclet.jar
 -doclet
 bluej.doclet.doclets.formats.html.HtmlDoclet
--doctitle
-final
--windowtitle
-final
--author
--version
--nodeprecated
--package
--link
-http://download.oracle.com/javase/8/docs/api/
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final/Ball.java
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final/Doty.java
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final/Wind.java
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final/mainGame.java
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final/Score.java
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final/Game.java
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final/Block.java
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final/Objc.java
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final/Room.java
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final/TroubleShooter.java
+C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\mainGame.java
 <---- end of javadoc command ---->
-Loading source file C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Ball.java...
-Loading source file C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Doty.java...
-Loading source file C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Wind.java...
-Loading source file C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\mainGame.java...
-Loading source file C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java...
-Loading source file C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Game.java...
-Loading source file C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Block.java...
-Loading source file C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Objc.java...
-Loading source file C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Room.java...
-Loading source file C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\TroubleShooter.java...
+Loading source file C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\mainGame.java...
 Constructing Javadoc information...
-Standard Doclet version 1.8.0_40
+Standard Doclet version 1.8.0_101
 Building tree for all the packages and classes...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\Ball.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\Block.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\Doty.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\Game.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\mainGame.html...
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\mainGame.java:36: warning - @param argument "y" is not a parameter name.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\mainGame.java:36: warning - @return tag cannot be used in method with void return type.
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\Objc.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\Room.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\Score.html...
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java:27: warning - Tag @return cannot be used in constructor documentation.  It can only be used in the following types of documentation: method.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java:27: warning - @param argument "none" is not a parameter name.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java:49: warning - @param argument "none" is not a parameter name.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java:49: warning - @return tag cannot be used in method with void return type.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java:180: warning - @param argument "none" is not a parameter name.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java:180: warning - @return tag cannot be used in method with void return type.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java:67: warning - @param argument "none" is not a parameter name.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java:58: warning - @param argument "none" is not a parameter name.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java:85: warning - @param argument "none" is not a parameter name.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java:85: warning - @return tag cannot be used in method with void return type.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java:76: warning - @param argument "String" is not a parameter name.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java:76: warning - @return tag cannot be used in method with void return type.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Score.java:202: warning - @param argument "none" is not a parameter name.
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\TroubleShooter.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\Wind.html...
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Wind.java:15: warning - @param argument "none" is not a parameter name.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Wind.java:36: warning - @param argument "none" is not a parameter name.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Wind.java:27: warning - @param argument "none" is not a parameter name.
-C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\Wind.java:46: warning - @param argument "none" is not a parameter name.
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\package-frame.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\package-summary.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\package-tree.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\constant-values.html...
+Generating C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\doc\mainGame.html...
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\World1.java:15: error: class World is public, should be declared in a file named World.java
+public class World extends JComponent implements ModelDisplay
+       ^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\World1.java:38: error: cannot find symbol
+  private Picture picture = null;
+          ^
+  symbol:   class Picture
+  location: class World
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\World1.java:118: error: cannot find symbol
+  public Picture getPicture() { return picture; }
+         ^
+  symbol:   class Picture
+  location: class World
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\World1.java:124: error: cannot find symbol
+  public void setPicture(Picture pict) { picture = pict; }
+                         ^
+  symbol:   class Picture
+  location: class World
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\SimpleTurtle.java:37: error: cannot find symbol
+  private Picture picture = null;
+          ^
+  symbol:   class Picture
+  location: class SimpleTurtle
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\SimpleTurtle.java:128: error: cannot find symbol
+  public SimpleTurtle(int x, int y, Picture picture)
+                                    ^
+  symbol:   class Picture
+  location: class SimpleTurtle
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\SimpleTurtle.java:140: error: cannot find symbol
+  public SimpleTurtle(Picture picture)
+                      ^
+  symbol:   class Picture
+  location: class SimpleTurtle
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\SimpleTurtle.java:212: error: cannot find symbol
+  public Picture getPicture() { return this.picture; }
+         ^
+  symbol:   class Picture
+  location: class SimpleTurtle
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\SimpleTurtle.java:218: error: cannot find symbol
+  public void setPicture(Picture pict) { this.picture = pict; }
+                         ^
+  symbol:   class Picture
+  location: class SimpleTurtle
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\SimpleTurtle.java:587: error: cannot find symbol
+  public synchronized void drop(Picture dropPicture) 
+                                ^
+  symbol:   class Picture
+  location: class SimpleTurtle
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\FrameSequencer.java:35: error: cannot find symbol
+  private List<Picture> pictureList = new ArrayList<Picture>();
+               ^
+  symbol:   class Picture
+  location: class FrameSequencer
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\FrameSequencer.java:158: error: cannot find symbol
+  public void addFrame(Picture picture)
+                       ^
+  symbol:   class Picture
+  location: class FrameSequencer
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\MoviePlayer.java:30: error: cannot find symbol
+  public MoviePlayer(List<Picture> pictureList)
+                          ^
+  symbol:   class Picture
+  location: class MoviePlayer
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\MoviePlayer.java:165: error: cannot find symbol
+  public void addPicture(Picture picture)
+                         ^
+  symbol:   class Picture
+  location: class MoviePlayer
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\AnimationPanel.java:43: error: cannot find symbol
+  public AnimationPanel(List<Picture> pictList)
+                             ^
+  symbol:   class Picture
+  location: class AnimationPanel
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\AnimationPanel.java:146: error: cannot find symbol
+  public void add(Picture picture)
+                  ^
+  symbol:   class Picture
+  location: class AnimationPanel
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\TurtleTest1.java:3: error: class TurtleTest is public, should be declared in a file named TurtleTest.java
+public class TurtleTest
+       ^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\Turtle1.java:12: error: class Turtle is public, should be declared in a file named Turtle.java
+public class Turtle extends SimpleTurtle
+       ^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\Turtle1.java:22: error: cannot find symbol
+  public Turtle (int x, int y, Picture picture) 
+                               ^
+  symbol:   class Picture
+  location: class Turtle
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\Turtle1.java:54: error: cannot find symbol
+  public Turtle (Picture p)
+                 ^
+  symbol:   class Picture
+  location: class Turtle
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\SimplePicture.java:532: error: cannot find symbol
+  public Picture scale(double xFactor, double yFactor)
+         ^
+  symbol:   class Picture
+  location: class SimplePicture
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\SimplePicture.java:559: error: cannot find symbol
+  public Picture getPictureWithWidth(int width)
+         ^
+  symbol:   class Picture
+  location: class SimplePicture
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\SimplePicture.java:574: error: cannot find symbol
+  public Picture getPictureWithHeight(int height)
+         ^
+  symbol:   class Picture
+  location: class SimplePicture
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\PictureFrame.java:67: error: cannot find symbol
+  public void setPicture(Picture picture)
+                         ^
+  symbol:   class Picture
+  location: class PictureFrame
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\Picture1.java:17: error: class Picture is public, should be declared in a file named Picture.java
+public class Picture extends SimplePicture
+       ^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\MovieWriter.java:7: error: package ch.randelshofer.media.avi does not exist
+import ch.randelshofer.media.avi.AVIOutputStream;
+                                ^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:35: error: package javax.media does not exist
+import javax.media.*;
+^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:36: error: package javax.media.control does not exist
+import javax.media.control.*;
+^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:37: error: package javax.media.protocol does not exist
+import javax.media.protocol.*;
+^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:38: error: package javax.media.protocol does not exist
+import javax.media.protocol.DataSource;
+                           ^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:39: error: package javax.media.datasink does not exist
+import javax.media.datasink.*;
+^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:40: error: package javax.media.format does not exist
+import javax.media.format.VideoFormat;
+                         ^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:51: error: cannot find symbol
+public class JpegImagesToMovie implements ControllerListener, 
+                                          ^
+  symbol: class ControllerListener
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:52: error: cannot find symbol
+  DataSinkListener {
+  ^
+  symbol: class DataSinkListener
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:68: error: cannot find symbol
+                               MediaLocator outML) {
+                               ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:120: error: cannot find symbol
+                         MediaLocator outML) {
+                         ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:137: error: cannot find symbol
+                      MediaLocator outML,
+                      ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:233: error: cannot find symbol
+                      MediaLocator outML,
+                      ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:323: error: cannot find symbol
+  DataSink createDataSink(Processor p, MediaLocator outML) {
+                          ^
+  symbol:   class Processor
+  location: class JpegImagesToMovie
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:323: error: cannot find symbol
+  DataSink createDataSink(Processor p, MediaLocator outML) {
+                                       ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:323: error: cannot find symbol
+  DataSink createDataSink(Processor p, MediaLocator outML) {
+  ^
+  symbol:   class DataSink
+  location: class JpegImagesToMovie
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:354: error: cannot find symbol
+  boolean waitForState(Processor p, int state) {
+                       ^
+  symbol:   class Processor
+  location: class JpegImagesToMovie
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:368: error: cannot find symbol
+  public void controllerUpdate(ControllerEvent evt) {
+                               ^
+  symbol:   class ControllerEvent
+  location: class JpegImagesToMovie
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:410: error: cannot find symbol
+  public void dataSinkUpdate(DataSinkEvent evt) {
+                             ^
+  symbol:   class DataSinkEvent
+  location: class JpegImagesToMovie
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:506: error: cannot find symbol
+  static MediaLocator createMediaLocator(String url) {
+         ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:537: error: cannot find symbol
+  class ImageDataSource extends PullBufferDataSource {
+                                ^
+  symbol:   class PullBufferDataSource
+  location: class JpegImagesToMovie
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:604: error: cannot find symbol
+  class ImageSourceStream implements PullBufferStream {
+                                     ^
+  symbol:   class PullBufferStream
+  location: class JpegImagesToMovie
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:548: error: cannot find symbol
+    public void setLocator(MediaLocator source) {
+                           ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie.ImageDataSource
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:551: error: cannot find symbol
+    public MediaLocator getLocator() {
+           ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie.ImageDataSource
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:578: error: cannot find symbol
+    public PullBufferStream[] getStreams() {
+           ^
+  symbol:   class PullBufferStream
+  location: class JpegImagesToMovie.ImageDataSource
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:587: error: cannot find symbol
+    public Time getDuration() {
+           ^
+  symbol:   class Time
+  location: class JpegImagesToMovie.ImageDataSource
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:608: error: cannot find symbol
+    VideoFormat format;
+    ^
+  symbol:   class VideoFormat
+  location: class JpegImagesToMovie.ImageSourceStream
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:639: error: cannot find symbol
+    public void read(Buffer buf) throws IOException {
+                     ^
+  symbol:   class Buffer
+  location: class JpegImagesToMovie.ImageSourceStream
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:693: error: cannot find symbol
+    public Format getFormat() {
+           ^
+  symbol:   class Format
+  location: class JpegImagesToMovie.ImageSourceStream
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\JpegImagesToMovie.java:697: error: cannot find symbol
+    public ContentDescriptor getContentDescriptor() {
+           ^
+  symbol:   class ContentDescriptor
+  location: class JpegImagesToMovie.ImageSourceStream
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\APicture2.java:24: error: invalid method declaration; return type required
+  public APicture2 ()
+         ^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\APicture2.java:36: error: invalid method declaration; return type required
+  public APicture2(String fileName)
+         ^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\APicture2.java:47: error: invalid method declaration; return type required
+  public APicture2(int width, int height)
+         ^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\APicture2.java:57: error: invalid method declaration; return type required
+  public APicture2(Picture copyPicture)
+         ^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\APicture2.java:67: error: invalid method declaration; return type required
+  public APicture2(BufferedImage image)
+         ^
+C:\Users\aashamsi\Desktop\color-ch3-2016-AshhalShamsi\ColorLabs\bookClasses\APicture2.java:17: error: class Picture is public, should be declared in a file named Picture.java
+public class Picture extends SimplePicture
+       ^
+C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\mainGame.java:43: warning - @param argument "y" is not a parameter name.
+C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\mainGame.java:43: warning - @return tag cannot be used in method with void return type.
+Generating C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\doc\package-frame.html...
+Generating C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\doc\package-summary.html...
+Generating C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\doc\constant-values.html...
 Building index for all the packages and classes...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\overview-tree.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\index-all.html...
 Building index for all classes...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\allclasses-frame.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\allclasses-noframe.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\index.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\help-doc.html...
-Generating C:\Users\Dragonstorm24\Desktop\Final-for-CS\final\doc\stylesheet.css...
-19 warnings
+Generating C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\doc\allclasses-frame.html...
+Generating C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\doc\allclasses-noframe.html...
+Generating C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\doc\index.html...
+Generating C:\Users\aashamsi\Desktop\GitHub\Final-for-CS\final\doc\stylesheet.css...
+Note: Custom tags that could override future standard tags:  @pre, @post. To avoid potential overrides, use at least one period character (.) in custom tag names.
+Note: Custom tags that were not seen:  @pre, @post
+61 errors
+2 warnings
