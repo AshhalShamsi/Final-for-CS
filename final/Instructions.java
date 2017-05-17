@@ -34,7 +34,7 @@ public class Instructions
         String page4 = "The ball will be throws according to how you threw it, and will land either inside or \n";
         page4 += "outside of the wastepaper basket.\n\nIf your ball went in, your score will increase by one. \n";
         page4 += "If your ball did not land in the basket, your game will be over and we'll check to see if\n";
-        page4 += "your score was a Top Score.\n\nGood Luck!";
+        page4 += "your score was a Top Score.\n\nClick F1 to access the menu during gameplay.\n\nGood Luck!";
         
         //instructions = a list of all pages of instructions
         instructions = new String[]{page1, page2, page3, page4};

@@ -103,4 +103,22 @@ public class Objc
         z = g;
     }
     
+    /**
+     * Payton here --> Sets the texture (in case you change it)
+     * @param String --> The new texture
+     * @return none
+     */
+    public void setTexture(String txt){
+        texture = txt;
+    }
+    
+    /**
+     * Payton here --> Gets the texture of the objc object
+     * @param none
+     * @return String the texture
+     */
+    public String getTexture(){
+        return texture;
+    }
+    
 }

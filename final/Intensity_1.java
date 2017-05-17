@@ -8,6 +8,7 @@ public class Intensity_1 extends Objc
 {
     /** Instance Variable */
     private int intensity; //How strongly the player will be throwing the ball
+    private int rotateZ; //Me trying to get the arrow to be upright
 
     /**
      * Constructor for Intensity
@@ -31,6 +32,7 @@ public class Intensity_1 extends Objc
         //now.
         intensity = 10;
         
+        rotateZ = 90;
     }
 
     /**
@@ -44,7 +46,7 @@ public class Intensity_1 extends Objc
         
         //Changes the size of the intensity-indicator (the arrow)
         //so that the user knows that their intensity is changing
-        super.setscale(((double)intensity) / 10.0);
+        super.setscale((intensity) / 10.0);
     }
     
     /**
@@ -59,7 +61,7 @@ public class Intensity_1 extends Objc
         
         //Changes the size of the intensity-indicator (the arrow)
         //so that the user knows that their intensity is changing
-        super.setscale(((double)intensity) / 10.0);        
+        super.setscale((intensity) / 10.0);        
     }
     
     /**
@@ -69,6 +71,28 @@ public class Intensity_1 extends Objc
      */
     public int getIntensity(){
         return intensity;
+    }
+    
+    /**
+     * Resets intensity to the original intensity
+     * @param none
+     * @return none
+     */
+    public void reset(){
+        intensity = 10;
+    }
+    
+    /**
+     * Changes the visibility of the object
+     * (You make objects invisible when the texture is none)
+     * @param none
+     * @return none
+     */
+    public void changeVisibility(){
+        if (this.getTexture().equals(null))
+            this.setTexture("textures/terrain/alpha.png");
+        else
+            this.setTexture(null);
     }
 
 }
