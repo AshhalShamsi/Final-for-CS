@@ -13,7 +13,7 @@ public class mainGame
     // instance variables - replace the example below with your own
     private static Env env;
     private Room room;
-    private Objc stuff, stuff2, fidget, test;
+    private Objc stuff, stuff2, fidget, test, bucket1;
     private Ball ball1;
     private Thread t = new Thread();
     private final static double step = .15; 
@@ -30,7 +30,8 @@ public class mainGame
         room.setTextureTop("textures/bricks.jpg");
         room.setTextureBottom("textures/bricks.jpg");
         stuff2 = new Objc("models/test/test.jpg","models/trash/trash.obj",5,8,5);
-        ball1 = new Ball(512, "models/test/test.jpg", 5, 2, 8, 1 );
+        ball1 = new Ball(512,"models/test/test.jpg", 5, 2, 8, 1 );
+        bucket1 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket1.obj", 5,2,5);
         //test = new Intensity_1(13, 13, 13);
     }
 
@@ -48,16 +49,18 @@ public class mainGame
         boolean finished = false;
         room.setCurrentRoom(env);
         env.setCameraXYZ(5, 13, 9);        
+        
         //System.out.println(env.getCameraPitch());
         // Disable mouse and camera control
         env.setDefaultControl(finished);
         env.addObject(stuff2);
         env.addObject(ball1);
+        env.addObject(bucket1);
         //env.addObject(test);
        
         while (env.getKey() != 1)
         {
-            ball1.setxyz(env.getCameraX()+(5*Math.cos(env.getCameraPitch()*Math.PI/180)* Math.cos(env.getCameraYaw()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraYaw()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getCameraPitch()*Math.PI/180)*Math.sin(env.getCameraYaw()*Math.PI/180)));
+            //ball1.setxyz(env.getCameraX()+(5*Math.cos(env.getCameraPitch()*Math.PI/180)* Math.cos(env.getCameraYaw()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraYaw()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getCameraPitch()*Math.PI/180)*Math.sin(env.getCameraYaw()*Math.PI/180)));
             //ball1.setYaw(env.getCameraYaw());
             env.advanceOneFrame();
             // Position the camera
