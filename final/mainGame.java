@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import env3d.Env;
+import env3d.advanced.*;
 import org.lwjgl.input.Keyboard;
 import java.util.*;
 /**
@@ -11,7 +12,7 @@ import java.util.*;
 public class mainGame
 {
     // instance variables - replace the example below with your own
-    private static Env env;
+    private static EnvAdvanced env;
     private Room room;
     private Objc stuff, stuff2, fidget, test, bucket1;
     private Ball ball1;
@@ -29,7 +30,7 @@ public class mainGame
         room.setTextureWest("textures/bricks.jpg");
         room.setTextureTop("textures/bricks.jpg");
         room.setTextureBottom("textures/bricks.jpg");
-        stuff2 = new Objc("models/test/test.jpg","models/trash/trash.obj",5,8,5);
+        stuff2 = new Objc("models/bucket/bucket1.jpg","models/trash/trash.obj",5,8,5);
         ball1 = new Ball(512,"models/test/test.jpg", 5, 2, 8, 1 );
         bucket1 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket1.obj", 5,2,5);
         //test = new Intensity_1(13, 13, 13);
@@ -45,7 +46,7 @@ public class mainGame
     {
         // put your code here
         // Position the camera
-        env = new Env();
+        env = new EnvAdvanced();
         boolean finished = false;
         room.setCurrentRoom(env);
         env.setCameraXYZ(5, 13, 9);        
@@ -60,7 +61,7 @@ public class mainGame
        
         while (env.getKey() != 1)
         {
-            ball1.setxyz(env.getCameraX()-(5*Math.cos(env.getCameraPitch()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()-(5*Math.cos(env.getCameraYaw()*Math.PI/180)));
+            //ball1.setxyz(env.getCameraX()-(5*Math.cos(env.getCameraPitch()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()-(5*Math.cos(env.getCameraYaw()*Math.PI/180)));
             //ball1.setxyz(env.getCameraX() + (5*Math.cos(env.getMouseDX()*Math.PI/180)),  env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getMouseDY()*Math.PI/180)));
             //ball1.setYaw(env.getCameraYaw());
             env.advanceOneFrame();
@@ -71,8 +72,9 @@ public class mainGame
                 else
                     finished = false;
                     
-            if (finished == false)
+            if (finished == false && !room.checkCollision(env))
                 move();
+          
             env.setDefaultControl(finished);
         }
         env.exit();

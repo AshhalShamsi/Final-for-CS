@@ -7,7 +7,7 @@
  */
 public class Objc
 {
-    private double x,y,z, roomWidth, roomDepth, scale;
+    private double x,y,z, roomWidth, roomDepth, scale, ox,oy,oz;
     private String texture, model;
     public Objc(String txt, String mod, double e, double f, double g)
     {
@@ -26,6 +26,15 @@ public class Objc
         return rekt;
         
     }
+    
+    
+    public double getScale()
+    {
+        return this.scale;
+        
+        
+    }
+    
      /**
      * Set the dimension of the room Doty is in
      */
@@ -41,6 +50,7 @@ public class Objc
      * @return none
      */
     public void setX(double e){
+        ox= x;
         x = e;
     }
     
@@ -59,6 +69,7 @@ public class Objc
      * @return none
      */
     public void setY(double f){
+        oy = y;
         y = f;
     }
     
@@ -77,6 +88,7 @@ public class Objc
      * @return none
      */
     public void setZ(double g){
+        oz = z;
         z = g;
     }
     
@@ -98,10 +110,24 @@ public class Objc
      * @return none
      */
     public void setCoordinates(double e, double f, double g){
+        ox = x;
+        oy = y;
+        oz = z;
         x = e;
         y = f;
         z = g;
     }
+    
+    /**
+     * Reverts doty back to the previous position
+     */
+    public void revert()
+    {
+        x = ox;
+        y = oy;
+        z = oz;
+    }
+     
     
     /**
      * Payton here --> Sets the texture (in case you change it)

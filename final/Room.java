@@ -58,6 +58,41 @@ public class Room
         return blocks;
     }
      
+    
+    
+    
+     /**
+     * The private distance method
+     */
+    private double distance(double x1, double x2, double y1, double y2, double z1, double z2) {
+        double xdiff, ydiff, zdiff;
+        xdiff = x2 - x1;
+        ydiff = y2 - y1;
+        zdiff = z2 - z1;
+        return (double) Math.sqrt(xdiff*xdiff + ydiff*ydiff + zdiff*zdiff);
+    }    
+     
+    
+    /**
+     * Check to see if any collision occur between Doty and the objects in the current room
+     */   
+    public boolean checkCollision(Env env)
+    {
+        // For every wall in the current room
+        for (Block block : this.getBlocks()) {
+            // Stop doty from moving if doty hits a wall
+            double dist = distance(block.getX(), env.getCameraX(), block.getY(), env.getCameraY(), block.getZ(), env.getCameraZ());
+            if (dist <= block.getScale() + 5) {                
+                return true;
+            }
+           
+        }
+        return false;
+    }
+    
+    
+    
+    
     /**
      * Get the description of the room
      * 
