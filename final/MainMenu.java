@@ -10,6 +10,7 @@ import java.util.*;
  * @version (a version number or a date)
  */
 
+import java.util.Scanner;
 public class MainMenu
 {
     private Env env;
@@ -25,9 +26,11 @@ public class MainMenu
         env.exit();
         mainGame.main(stuff);
         
-        while (env.getKey() != 1)
+        while (env.getKey() != 1){
+            /**Code**/
+        }
        
-    }
+    
 
    
 

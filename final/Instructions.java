@@ -7,8 +7,8 @@
  */
 public class Instructions
 {
-   public static String[] instructions;
-   public static int myPage;
+   private static String[] instructions;
+   private static int myPage;
    
    /**
     * SetUp method -- gets things ready (because it's static)
@@ -19,7 +19,7 @@ public class Instructions
         //page1 = the first page of instructions
         String page1 = "Welcome to the Paper Toss Game!\n\nThe objective of this game is to throw the paper ball into";
         page1 += " the paper waste basket successfully. \n\nTo start the game, click start and move around the office";
-        page1 += " building until you find a paper waste basket.\n\n Hit space to stop.";
+        page1 += " building until you find a paper waste basket.\n\nHit space to stop.";
         
         //page2 = the second page of instructions
         String page2 = "Once you're stopped, a wind speed will be displayed. Use the arrow keys (ARE WE USING WASD?)\n";
@@ -32,12 +32,19 @@ public class Instructions
         
         //page4 = the fourth page of instructions
         String page4 = "The ball will be throws according to how you threw it, and will land either inside or \n";
-        page4 += "outside of the wastepaper basket.\n\nIf your ball went in, your score will increase by one. \n";
+        page4 += "outside of the wastepaper basket.\n\nIf your ball went in, your score will increase by your. \n";
+        page4 += "distance away from the basket when you threw the ball. Keep in mind that you get more points for\n";
+        page4 += "being father away from the basket.\n\n";
         page4 += "If your ball did not land in the basket, your game will be over and we'll check to see if\n";
         page4 += "your score was a Top Score.\n\nClick F1 to access the menu during gameplay.\n\nGood Luck!";
         
         //instructions = a list of all pages of instructions
         instructions = new String[]{page1, page2, page3, page4};
+        
+        //Adds a common instruction to the bottom of each page
+        for (int i = 0; i < instructions.length; i++){
+            instructions[i] = (instructions[i] += "\n\nType P) Previous\t\tType N) Next\t\tType E) Exit");
+        }
         
         //myPage = What instruction page I'm currently on.
         //Remember 0 = page 1, 1 = page 2...
@@ -91,11 +98,14 @@ public class Instructions
     }
     
     /**
-     * toString -- Gets all of the instructions in a giant string
+     * toStringStatic -- Gets all of the instructions in a giant string
+     * This WILL NOT automatically be called on a print, must call it
+     * personally.
+     * 
      * @param none
      * @return String All of the instructions
      */
-    public String toString(){
+    public static String toStringStatic(){
         String info = "";
         
         for (int i = 0; i < 4; i++)
