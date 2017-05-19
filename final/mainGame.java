@@ -60,7 +60,8 @@ public class mainGame
        
         while (env.getKey() != 1)
         {
-            //ball1.setxyz(env.getCameraX()+(5*Math.cos(env.getCameraPitch()*Math.PI/180)* Math.cos(env.getCameraYaw()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraYaw()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getCameraPitch()*Math.PI/180)*Math.sin(env.getCameraYaw()*Math.PI/180)));
+            ball1.setxyz(env.getCameraX()-(5*Math.cos(env.getCameraPitch()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()-(5*Math.cos(env.getCameraYaw()*Math.PI/180)));
+            //ball1.setxyz(env.getCameraX() + (5*Math.cos(env.getMouseDX()*Math.PI/180)),  env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getMouseDY()*Math.PI/180)));
             //ball1.setYaw(env.getCameraYaw());
             env.advanceOneFrame();
             // Position the camera
@@ -104,7 +105,7 @@ public class mainGame
                                 env.getCameraZ()-step*Math.sin(Math.toRadians(env.getCameraYaw())));
         }
          
-        double newPitch = env.getCameraPitch()+env.getMouseDY();
+        double newPitch = env.getCameraPitch()+env.getMouseDY()/2;
          
         // Restrict the pitch to within a "reasonable" amount
         if (newPitch > 50) {
@@ -115,7 +116,7 @@ public class mainGame
             env.setCameraPitch(newPitch);
         }
          
-        env.setCameraYaw(env.getCameraYaw()-env.getMouseDX());
+        env.setCameraYaw(env.getCameraYaw()-env.getMouseDX()/2);
 
 }
     
