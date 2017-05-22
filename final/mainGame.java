@@ -78,7 +78,7 @@ public class mainGame
                     finished = false;
             
             if (env.getKey() == 59)
-                menu.useMenu();
+                menu.useMenu(true);
             
             if (finished == false && !room.checkCollision(env))
                 move();
