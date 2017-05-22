@@ -14,6 +14,7 @@ public class GraphiclessMenu
     private Score myScore; //The user's score
     private Scanner keyboard; //For input
     private boolean firstUse; //To see if it is the user's first use
+    //private mainGame game; //The actual game
 
     /**
      * Constructor for objects of class GraphiclessMenu
@@ -24,6 +25,7 @@ public class GraphiclessMenu
         myScore = new Score();
         keyboard = new Scanner(System.in);
         firstUse = true;
+        // game = new mainGame();
     }
     
     /**
@@ -63,6 +65,7 @@ public class GraphiclessMenu
         //the menu (if so, need their name, and if not,
         //can't let them play because they should already
         //be playing)
+        System.out.println(this);
         if (this.firstUse){
             System.out.print("Enter your name: ");
             myScore.setName(keyboard.nextLine());
@@ -126,11 +129,11 @@ public class GraphiclessMenu
         //If they want to play the game, and they aren't already playing
         //the game, launches the game for them.
         if (choice == '4' && this.firstUse){
-            mainGame game = new mainGame();
-            game.play();
+            firstUse = false;
+            //game.play();
         }
-        
-        this.firstUse = false;
+
+        System.exit(0);
     }
 }
 

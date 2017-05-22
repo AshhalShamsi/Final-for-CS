@@ -21,10 +21,11 @@ public class mainGame
     private Ball ball1;
     private Thread t = new Thread();
     private final static double step = .15; 
+    private GraphiclessMenu menu;
     /**
      * Constructor for objects of class mainGame
      */
-    public mainGame()
+    public mainGame() throws IOException
     {
         room = new Room (45,10,35, "Mi cabeza es ROJO");
         room.setTextureEast("textures/bricks.jpg");
@@ -36,6 +37,7 @@ public class mainGame
         stuff2 = new Objc("models/bucket/bucket1.jpg","models/trash/trash.obj",5,8,5);
         ball1 = new Ball(512,"models/test/test.jpg", 5, 2, 8, 1 );
         bucket1 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket1.obj", 5,2,5);
+        menu = new GraphiclessMenu();
         //test = new Intensity_1(13, 13, 13);
     }
 
@@ -76,7 +78,7 @@ public class mainGame
                     finished = false;
             
             if (env.getKey() == 59)
-                (new GraphiclessMenu()).useMenu();
+                menu.useMenu();
             
             if (finished == false && !room.checkCollision(env))
                 move();
