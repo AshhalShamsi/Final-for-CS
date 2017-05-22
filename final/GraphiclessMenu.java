@@ -11,8 +11,9 @@ import javax.swing.*;
 import java.io.*;
 public class GraphiclessMenu
 {
-    private Score myScore;
-    private Scanner keyboard;
+    private Score myScore; //The user's score
+    private Scanner keyboard; //For input
+    private boolean firstUse; //To see if it is the user's first use
 
     /**
      * Constructor for objects of class GraphiclessMenu
@@ -22,8 +23,32 @@ public class GraphiclessMenu
         Instructions.setUp();
         myScore = new Score();
         keyboard = new Scanner(System.in);
+        firstUse = true;
     }
     
+    /**
+     * A display in the event this is the first time with menu
+     * @param none
+     * @return none
+     */
+    private void firstDisplay(){
+        System.out.println("\n1) Exit");
+        System.out.println("2) Instructions");
+        System.out.println("3) Top Scores");
+        System.out.println("4) Play Game");
+    }
+    
+    /**
+     * A display to call if this isn't the first time
+     * running the menu through
+     * @param none
+     * @return none
+     */
+    public void nextDisplay(){
+        System.out.println("\n1) Exit");
+        System.out.println("2) Instructions");
+        System.out.println("3) Top Scores");
+    }
 
     /**
      * Calls and uses the menu
@@ -33,13 +58,18 @@ public class GraphiclessMenu
      */
     public void useMenu() throws IOException, InterruptedException
     {
-        System.out.print("Enter your name: ");
-        myScore.setName(keyboard.nextLine());
         
-        System.out.println("1) Exit");
-        System.out.println("2) Instructions");
-        System.out.println("3) Top Scores");
-        System.out.println("4) Play Game");
+        //Sees if this is the user's first time through
+        //the menu (if so, need their name, and if not,
+        //can't let them play because they should already
+        //be playing)
+        if (this.firstUse){
+            System.out.print("Enter your name: ");
+            myScore.setName(keyboard.nextLine());
+            this.firstDisplay();
+        }
+        else
+            this.nextDisplay();
         
         System.out.print("\nChoice: ");
         char choice = keyboard.nextLine().charAt(0);
@@ -83,21 +113,24 @@ public class GraphiclessMenu
             }
             
             //Gets the user's next choice
-            System.out.println("\n\n1) Exit");
-            System.out.println("2) Instructions");
-            System.out.println("3) Top Scores");
-            System.out.println("4) Play Game");
+            if (this.firstUse)
+                this.firstDisplay();
+            else
+                this.nextDisplay();
             
             System.out.print("\nChoice: ");
             choice = keyboard.nextLine().charAt(0);
                     
         }
         
-        //NOT SURE IF THIS CODE WORKS, TROUBLESHOOT IT
-        if (choice == '4'){
+        //If they want to play the game, and they aren't already playing
+        //the game, launches the game for them.
+        if (choice == '4' && this.firstUse){
             mainGame game = new mainGame();
             game.play();
         }
+        
+        this.firstUse = false;
     }
 }
 
