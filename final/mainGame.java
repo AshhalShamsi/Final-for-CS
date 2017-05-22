@@ -3,6 +3,9 @@ import env3d.Env;
 import env3d.advanced.*;
 import org.lwjgl.input.Keyboard;
 import java.util.*;
+import java.text.*;
+import javax.swing.*;
+import java.io.*;
 /**
  * Write a description of class mainGame here.
  * 
@@ -42,7 +45,7 @@ public class mainGame
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public void play() throws InterruptedException
+    public void play() throws InterruptedException, IOException
     {
         // put your code here
         // Position the camera
@@ -123,7 +126,7 @@ public class mainGame
 }
     
     
-public static void main(String[] args) throws InterruptedException
+public static void main(String[] args) throws InterruptedException, IOException
     {  
         (new mainGame()).play();
     }

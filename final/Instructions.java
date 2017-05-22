@@ -32,9 +32,7 @@ public class Instructions
         
         //page4 = the fourth page of instructions
         String page4 = "The ball will be throws according to how you threw it, and will land either inside or \n";
-        page4 += "outside of the wastepaper basket.\n\nIf your ball went in, your score will increase by your. \n";
-        page4 += "distance away from the basket when you threw the ball. Keep in mind that you get more points for\n";
-        page4 += "being father away from the basket.\n\n";
+        page4 += "outside of the wastepaper basket.\n\nIf your ball went in, your score will increase by 1. \n";
         page4 += "If your ball did not land in the basket, your game will be over and we'll check to see if\n";
         page4 += "your score was a Top Score.\n\nClick F1 to access the menu during gameplay.\n\nGood Luck!";
         
@@ -86,6 +84,16 @@ public class Instructions
      */
     public static String getPage(){
         return instructions[myPage];
+    }
+    
+    /**
+     * Sets the page number
+     * Precondition: The number is between 0-3
+     * @param int the new page number
+     * @return none
+     */
+    public static void setPageNumber(int n){
+        myPage = n;
     }
     
     /**
