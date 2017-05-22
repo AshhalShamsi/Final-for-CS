@@ -22,8 +22,7 @@ public class Intensity_1 extends Objc
      */
     public Intensity_1(double x, double y, double z)
     {
-        //Right now, the texture is a solid green sheet. Can change.
-        //NEED AN UPWARDS ARROW MODEL For now using a different one
+        //Creates the objc object
         super("textures/terrain/alpha.png", "models/arrows/arrow4.obj", x, y, z);
         
         //Default intensity -- User will change
@@ -89,10 +88,7 @@ public class Intensity_1 extends Objc
      * @return none
      */
     public void changeVisibility(){
-        if (this.getTexture().equals(null))
-            this.setTexture("textures/terrain/alpha.png");
-        else
-            this.setTexture(null);
+        super.changeVisibility("textures/terrain/alpha.png");
     }
 
 }

@@ -147,4 +147,17 @@ public class Objc
         return texture;
     }
     
+    /**
+     * Changes the visibility of the objc object
+     * (Invisible when the texture is none
+     * @param String the texture of the object
+     * @return none
+     */
+    public void changeVisibility(String txt){
+        if (this.getTexture().equals(null))
+            this.setTexture(txt);
+        else
+            this.setTexture(null);
+    }
+    
 }
