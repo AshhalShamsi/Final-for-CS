@@ -74,7 +74,10 @@ public class mainGame
                     finished = true;
                 else
                     finished = false;
-                    
+            
+            if (env.getKey() == 59)
+                (new GraphiclessMenu()).useMenu();
+            
             if (finished == false && !room.checkCollision(env))
                 move();
           
