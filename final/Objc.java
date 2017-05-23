@@ -1,4 +1,11 @@
-
+import java.util.ArrayList;
+import env3d.Env;
+import env3d.advanced.*;
+import org.lwjgl.input.Keyboard;
+import java.util.*;
+import java.text.*;
+import javax.swing.*;
+import java.io.*;
 /**
  * Write a description of class Objc here.
  * 
@@ -7,7 +14,7 @@
  */
 public class Objc
 {
-    private double x,y,z, roomWidth, roomDepth, scale, ox,oy,oz;
+    protected double x,y,z, roomWidth, roomDepth, scale, ox,oy,oz, rotateX, rotateY;
     private String texture, model;
     public Objc(String txt, String mod, double e, double f, double g)
     {
@@ -15,9 +22,14 @@ public class Objc
         y = f;
         z = g;
         texture = txt;
-        model = mod;
+        if (!(mod.equalsIgnoreCase("ball"))){
+            model = mod;
+        }
+        else
+            model = "ball";
         scale = 1;
     }
+
     
     public double setscale(double num)
     {
@@ -52,6 +64,55 @@ public class Objc
     public void setX(double e){
         ox= x;
         x = e;
+    }
+    
+     /**
+     * The private distance method
+     */
+    private double distance(Objc obj) {
+        double x1 = this.getX();
+        double y1 = this.getY();
+        double z1 = this.getZ();
+        double x2 = obj.getX();
+        double y2 = obj.getY();
+        double z2 = obj.getZ();
+        double xdiff, ydiff, zdiff;
+        xdiff = x2 - x1;
+        ydiff = y2 - y1;
+        zdiff = z2 - z1;
+        return (double) Math.sqrt(xdiff*xdiff + ydiff*ydiff + zdiff*zdiff);
+    }    
+    
+    /**
+     * Turn this object to face another game object
+     * @param gameObj to object to face 
+     */
+    public void turnToFace(Objc gameObj) 
+    {
+        this.setRotateY(Math.toDegrees(Math.atan2(gameObj.getX()-this.getX(),gameObj.getZ()-this.getZ())));
+        setRotateX(Math.toDegrees(Math.asin((this.getY()-gameObj.getY())/this.distance(gameObj))));        
+    }
+    
+     /**
+     * Turn this object to face another game object
+     * @param gameObj to object to face 
+     */
+    public void turnToFace(Ball gameObj) 
+    {
+        setRotateY(Math.toDegrees(Math.atan2(gameObj.getX()-this.getX(),gameObj.getZ()-this.getZ())));
+        setRotateX(Math.toDegrees(Math.asin((this.getY()-gameObj.getY())/this.distance(gameObj))));        
+    }
+    
+    public void setRotateY(double stuff)
+    {
+        rotateY = stuff;
+        
+    }
+    
+     public void setRotateX(double stuff)
+    {
+        rotateX = stuff;
+        
     }
     
     /**

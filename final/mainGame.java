@@ -15,6 +15,7 @@ import java.io.*;
 public class mainGame
 {
     // instance variables - replace the example below with your own
+    private static double ox,oy,oz;
     private static EnvAdvanced env;
     private Room room;
     private Objc stuff, stuff2, fidget, test, bucket1;
@@ -28,17 +29,20 @@ public class mainGame
     public mainGame() throws IOException
     {
         room = new Room (45,10,35, "Mi cabeza es ROJO");
-        room.setTextureEast("textures/bricks.jpg");
-        room.setTextureNorth("textures/bricks.jpg");
-        room.setTextureSouth("textures/bricks.jpg");
-        room.setTextureWest("textures/bricks.jpg");
-        room.setTextureTop("textures/bricks.jpg");
-        room.setTextureBottom("textures/bricks.jpg");
+        room.setTextureEast("textures/wall.jpg");
+        room.setTextureNorth("textures/wall.jpg");
+        room.setTextureSouth("textures/wall.jpg");
+        room.setTextureWest("textures/wall.jpg");
+        room.setTextureTop("textures/concrete.jpg");
+        room.setTextureBottom("textures/floor/paving5.png");
         stuff2 = new Objc("models/bucket/bucket1.jpg","models/trash/trash.obj",5,8,5);
-        ball1 = new Ball(512,"models/test/test.jpg", 5, 2, 8, 1 );
+        //ball1 = new Ball(512,"models/test/test.jpg", 5, 2, 8, 1 );
         bucket1 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket1.obj", 5,2,5);
         menu = new GraphiclessMenu();
         //test = new Intensity_1(13, 13, 13);
+        ox = 0;
+        oy =0;
+        oz = -1;
     }
 
     /**
@@ -54,19 +58,19 @@ public class mainGame
         env = new EnvAdvanced();
         boolean finished = false;
         room.setCurrentRoom(env);
-        env.setCameraXYZ(5, 13, 9);        
+        env.setCameraXYZ(5, 13, 4);        
         
         //System.out.println(env.getCameraPitch());
         // Disable mouse and camera control
         env.setDefaultControl(finished);
         env.addObject(stuff2);
-        env.addObject(ball1);
+        //env.addObject(ball1);
         env.addObject(bucket1);
         //env.addObject(test);
        
         while (env.getKey() != 1)
         {
-            ball1.setxyz(env.getCameraX()-(5*Math.cos(env.getCameraPitch()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()-(5*Math.cos(env.getCameraYaw()*Math.PI/180)));
+            //ball1.setxyz(env.getCameraX()-(5*Math.cos(env.getCameraPitch()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()-(5*Math.cos(env.getCameraYaw()*Math.PI/180)));
             //ball1.setxyz(env.getCameraX() + (5*Math.cos(env.getMouseDX()*Math.PI/180)),  env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getMouseDY()*Math.PI/180)));
             //ball1.setYaw(env.getCameraYaw());
             env.advanceOneFrame();
@@ -80,8 +84,7 @@ public class mainGame
             if (env.getKey() == 59)
                 menu.useMenu(true);
             
-            if (finished == false && !room.checkCollision(env))
-                move();
+            checkWall();
           
             env.setDefaultControl(finished);
         }
@@ -89,8 +92,19 @@ public class mainGame
     }
     
     
+ private void checkWall()
+    {
+        if (env.getCameraX() > room.getWidth()-2) {
+           revert();
+        } else if (env.getCameraX() < 2) {
+           //revert();
+        }        
+    }    
+    
     public static void move(){
-        
+        ox = env.getCameraX();
+        oy = env.getCameraY();
+        oz = env.getCameraZ();
                 
                 if (env.getKeyDown(Keyboard.KEY_W)) {
             env.setCameraXYZ(env.getCameraX()-step*Math.sin(Math.toRadians(env.getCameraYaw())),
@@ -130,6 +144,11 @@ public class mainGame
 
 }
     
+
+public void revert(){
+    env.setCameraXYZ(ox,oy,oz);
+  
+}
     
 public static void main(String[] args) throws InterruptedException, IOException
     {  

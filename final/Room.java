@@ -193,7 +193,8 @@ public class Room
     {
         return width;
     }
-     
+    
+    
     /**
      * Accessor for room's dimension
      */
