@@ -15,9 +15,10 @@ import java.io.*;
 public class Objc
 {
     protected double x,y,z, roomWidth, roomDepth, scale, ox,oy,oz, rotateX, rotateY;
-    private String texture, model;
+    private String texture;
     public Objc(String txt, String mod, double e, double f, double g)
     {
+        String model;
         x = e;
         y = f;
         z = g;
@@ -27,6 +28,16 @@ public class Objc
         }
         else
             model = "ball";
+        scale = 1;
+    }
+
+    
+    public Objc(String txt, double e, double f, double g)
+    {
+        x = e;
+        y = f;
+        z = g;
+        texture = txt;
         scale = 1;
     }
 

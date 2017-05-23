@@ -21,7 +21,7 @@ public class mainGame
     private Objc stuff, stuff2, fidget, test, bucket1;
     private Ball ball1;
     private Thread t = new Thread();
-    private final static double step = .15; 
+    private final static double step = .25; 
     private GraphiclessMenu menu;
     /**
      * Constructor for objects of class mainGame
@@ -35,9 +35,9 @@ public class mainGame
         room.setTextureWest("textures/wall.jpg");
         room.setTextureTop("textures/concrete.jpg");
         room.setTextureBottom("textures/floor/paving5.png");
-        stuff2 = new Objc("models/bucket/bucket1.jpg","models/trash/trash.obj",5,8,5);
-        //ball1 = new Ball(512,"models/test/test.jpg", 5, 2, 8, 1 );
-        bucket1 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket1.obj", 5,2,5);
+        stuff2 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket.obj",3,0,room.getDepth()/2);
+        ball1 = new Ball(512,"models/test/test.jpg", 5, 2, 8, 1 );
+        bucket1 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket.obj",room.getWidth()-3,0,room.getDepth()/2);
         menu = new GraphiclessMenu();
         //test = new Intensity_1(13, 13, 13);
         ox = 0;
@@ -58,13 +58,13 @@ public class mainGame
         env = new EnvAdvanced();
         boolean finished = false;
         room.setCurrentRoom(env);
-        env.setCameraXYZ(5, 13, 4);        
+        env.setCameraXYZ(5, 5, 4);        
         
         //System.out.println(env.getCameraPitch());
         // Disable mouse and camera control
         env.setDefaultControl(finished);
         env.addObject(stuff2);
-        //env.addObject(ball1);
+        env.addObject(ball1);
         env.addObject(bucket1);
         //env.addObject(test);
        
@@ -83,7 +83,7 @@ public class mainGame
             
             if (env.getKey() == 59)
                 menu.useMenu(true);
-            
+            move();
             checkWall();
           
             env.setDefaultControl(finished);
@@ -97,8 +97,14 @@ public class mainGame
         if (env.getCameraX() > room.getWidth()-2) {
            revert();
         } else if (env.getCameraX() < 2) {
-           //revert();
-        }        
+           revert();
+        }       
+         else if (env.getCameraZ() > room.getDepth()-2) {
+           revert();
+        }      
+          else if (env.getCameraZ() < 2) {
+           revert();
+        }       
     }    
     
     public static void move(){

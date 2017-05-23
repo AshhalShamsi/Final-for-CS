@@ -13,7 +13,7 @@ public class Ball extends Objc
      */
     public Ball(int mass2, String type2, double g, double e, double f, double scle)
     {
-        super(type2, "ball",g,e,f);
+        super(type2,g,e,f);
         this.mass = mass2;
         super.scale = scle;
         rotateZ = 0;
