@@ -6,14 +6,14 @@
 public class Ball extends Objc
 {
     private int mass;
-    private String texture;
+    //private String texture;
     private double x,y,z,scale, rotateZ, ox,oy,oz;
     /**
      * Default constructor for objects of class Ball
      */
     public Ball(int mass2, String type2, double g, double e, double f, double scle)
     {
-        super(type2,g,e,f);
+        super(type2,"models/ball/Ball.obj",g,e,f);
         this.mass = mass2;
         super.scale = scle;
         rotateZ = 0;

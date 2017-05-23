@@ -71,7 +71,7 @@ public class mainGame
         while (env.getKey() != 1)
         {
             //ball1.setxyz(env.getCameraX()-(5*Math.cos(env.getCameraPitch()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()-(5*Math.cos(env.getCameraYaw()*Math.PI/180)));
-            //ball1.setxyz(env.getCameraX() + (5*Math.cos(env.getMouseDX()*Math.PI/180)),  env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getMouseDY()*Math.PI/180)));
+            ball1.setxyz(env.getCameraX() + (5*Math.cos(env.getMouseDX()*Math.PI/180)),  env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getMouseDY()*Math.PI/180)));
             //ball1.setYaw(env.getCameraYaw());
             env.advanceOneFrame();
             // Position the camera

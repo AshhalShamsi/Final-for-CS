@@ -15,32 +15,20 @@ import java.io.*;
 public class Objc
 {
     protected double x,y,z, roomWidth, roomDepth, scale, ox,oy,oz, rotateX, rotateY;
-    private String texture;
+    private String texture, model;
     public Objc(String txt, String mod, double e, double f, double g)
     {
-        String model;
         x = e;
         y = f;
         z = g;
         texture = txt;
-        if (!(mod.equalsIgnoreCase("ball"))){
-            model = mod;
-        }
-        else
-            model = "ball";
+        model = mod;
         scale = 1;
+        rotateX = 0;
+        rotateY = 0;
     }
 
     
-    public Objc(String txt, double e, double f, double g)
-    {
-        x = e;
-        y = f;
-        z = g;
-        texture = txt;
-        scale = 1;
-    }
-
     
     public double setscale(double num)
     {
