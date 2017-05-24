@@ -1,4 +1,4 @@
-------------------------------------------------------------------------
+﻿------------------------------------------------------------------------
 This is the project README file. Here, you should describe your project.
 Tell the reader (someone who does not know anything about this project)
 all she needs to know. The comments should usually include at least:
@@ -18,6 +18,10 @@ VERSION or DATE: Final Project Version #1
 		 End Date: 24 May 2017
 
 DEPENDENCIES: env3d Graphics Library
+
+CLASSES WE USED
+BUT DID NOT CODE: - Room
+		  - Block
 
 HOW TO START THIS PROJECT: Select the GraphiclessMenu Class, and start the main menu.
 			   You can check out the instructions, look at the top 10 scores
@@ -41,12 +45,12 @@ USER INSTRUCTIONS: Instructions are provided through the menu, however, the clif
 		     for troubleshooting code, but since they can be kind of fun we
 		     decided not to remove them. Just be aware that these were left
 		     intentionally and are not glitches.
+		   - Press Upwards Arrow to increase the intensity.
+		   - Press the downwards arrow to decrease the intensity.
 
 THINGS WE WROTE BUT
 DID NOT HAVE 
 TIME TO IMPLEMENT: Wind - Would have blown the ball off course, so that the user would have
 		          had to adjust to the wind.
-		   File I/O - In the score class, the idea was that the top 10 scores would
-		   	      be written into a file and saved.
 		   Intensity - The user was supposed to be able to pick how hard they wanted
 		   	       to throw the ball.

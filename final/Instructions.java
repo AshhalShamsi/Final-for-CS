@@ -23,12 +23,14 @@ public class Instructions
         
         //page2 = the second page of instructions
         String page2 = "Use WASD to move yourself around the room, and use the mouse to turn yourself left and right.\n";
-        page2 += "Once you're in a position in front of the waste basket, click F3 to throw.\n";
+        page2 += "\nUse the up and down arrow keys to increase and decrease the intensity of your throw.";
+        page2 += "\nOnce you're in a position in front of the waste basket, click F3 to throw.\n";
         
         //page3 = the third page of instructions
         String page3 = "If the basket is made, points will be added to your score.\n\nThe number of points you receive";
         page3 += " depends on how far away you were from the basket when the ball\nwas throws. You get more points from";
-        page3 += "being farther away from the basket.\n Good Luck!";
+        page3 += "being farther away from the basket.\n Good Luck!\n\nThe game ends when you've taken 10 shots.";
+        page3 += " So press 'Escape' (esc) to exit after you've taken 10 shots.\n";
         
         //page4 = the fourth page of instructions
         String page4 = "Controls:\n";
