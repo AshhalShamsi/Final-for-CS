@@ -100,12 +100,18 @@ public class mainGame
             //F3 allows the ball to be thrown
             if(env.getKey() == 61)
             {
-               //checks if the ball landed in the bucket
-               boolean temp = ball1.throwBall(env,intensity.getIntensity());
-               if (temp)
-                    score.add(ball1.getox(),ball1.getoy(),ball1.getoz(),true,true);
-               else 
-                    score.addShots();
+               if (!(score.getShots() >= 10))
+               {
+                   //checks if the ball landed in the bucket
+                   boolean temp = ball1.throwBall(env,intensity.getIntensity());
+                   //Since this isn't working, jsut always adding distance
+                   //from basket to score regardless of whether or not you made it.
+                  
+                   if (temp)
+                        score.add(ball1.getox(),ball1.getoy(),ball1.getoz(),true,true);
+                   else 
+                        score.addShots();
+                    }
                 }
             
             //if F1 is pressed then the menu opens up
