@@ -7,17 +7,17 @@ import java.text.*;
 import javax.swing.*;
 import java.io.*;
 /**
- * Write a description of class Objc here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * This Class provides the ability to create any object that can be put into the engine itself. ANy requiremnets/ features can be manipulated
+ * using methods from this class
  */
 public class Objc
 {
+    //initalizes instance variables that each object created in Env3d will use
     protected double x,y,z, roomWidth, roomDepth, scale, ox,oy,oz, rotateX, rotateY;
     private String texture, model;
     public Objc(String txt, String mod, double e, double f, double g)
     {
+        //initialies the variables to place them with Env3d
         x = e;
         y = f;
         z = g;
@@ -29,7 +29,11 @@ public class Objc
     }
 
     
-    
+    /**
+     * sets the scales
+     * @param double number
+     * returns old scale
+     */
     public double setscale(double num)
     {
         double rekt = scale;
@@ -39,6 +43,9 @@ public class Objc
     }
     
     
+    /**
+     * returns scale
+     */
     public double getScale()
     {
         return this.scale;
@@ -83,32 +90,20 @@ public class Objc
     }    
     
     /**
-     * Turn this object to face another game object
-     * @param gameObj to object to face 
-     
-    public void turnToFace(Objc gameObj) 
-    {
-        this.setRotateY(Math.toDegrees(Math.atan2(gameObj.getX()-this.getX(),gameObj.getZ()-this.getZ())));
-        setRotateX(Math.toDegrees(Math.asin((this.getY()-gameObj.getY())/this.distance(gameObj))));        
-    }
-    
-     /**
-     * Turn this object to face another game object
-     * @param gameObj to object to face 
-     *
-    public void turnToFace(Ball gameObj) 
-    {
-        setRotateY(Math.toDegrees(Math.atan2(gameObj.getX()-this.getX(),gameObj.getZ()-this.getZ())));
-        setRotateX(Math.toDegrees(Math.asin((this.getY()-gameObj.getY())/this.distance(gameObj))));        
-    }
-    
-    */
+     * sets the RotateY of the object
+     * @param double angle
+     */
     public void setRotateY(double stuff)
     {
         rotateY = stuff;
         
     }
     
+    
+     /**
+     * sets the RotateX of the object
+     * @param double angle
+     */
      public void setRotateX(double stuff)
     {
         rotateX = stuff;

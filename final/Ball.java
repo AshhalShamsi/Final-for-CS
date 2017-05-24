@@ -2,9 +2,11 @@ import env3d.Env;
 
 /**
  *This is the ball class
+ *Tried using Polymorphism with Objc, but because the defualt model is a ball it would not work
  */
 public class Ball
 {
+    //initializes instance vvariables to be used by Env3d
     private int mass;
     private String texture;
     private double x,y,z,scale, rotateZ, rotateX, ox,oy,oz;
@@ -23,31 +25,43 @@ public class Ball
         rotateZ = 0;
     }
     
-    public void setYaw(double yee)
-    {
-        rotateZ = yee;
-        
-    }
-    
+     /**
+     * sets the Texture of the object
+     * @param String path
+     */
     public void settype(String type2){
         texture = type2;
     }
     
+    /**
+     * returns the current scale of the ball
+     */
     public double getScale()
     {
         return this.scale;
     }
     
+     /**
+     * sets the Scale of the Ball
+     * @param double Scale
+     */
     public void setscale(double scale2){
         scale = scale2;
     }
     
+     /**
+     * sets the Mass of the object
+     * @param double Mass
+     */
     public void setmass(int mass2)
     {
         this.mass = mass2;
     }
   
-    public int getmass()
+     /**
+     * gets the mass of the object
+     */
+    public double getmass()
     {
         return this.mass;
     }
@@ -88,6 +102,34 @@ public class Ball
      */
     public double getY(){
         return y;
+    }
+    
+    
+    /**
+     * Payton here --> Gets the old-y coordinate
+     * @param none
+     * @return double - The old-y coordinate
+     */
+    public double getoy(){
+        return oy;
+    }
+    
+    /**
+     * Payton here --> Gets the old-z coordinate
+     * @param none
+     * @return double - The old-z coordinate
+     */
+    public double getoz(){
+        return oz;
+    }
+    
+    /**
+     * Payton here --> Gets the old-x coordinate
+     * @param none
+     * @return double - The old-x coordinate
+     */
+    public double getox(){
+        return ox;
     }
     
     /**
@@ -137,30 +179,46 @@ public class Ball
         z = oz;
     }
     
-    public void throwBall(Env env, double velocity)
+    
+     /**
+     * @param env initialization, horizontal velocity
+     * returns either true or false if the ball hit the bucket
+     */
+    public boolean throwBall(Env env, double velocity)
     {
        double initialY = this.getY();
        double initialX = this.getX();
        double initialZ = this.getZ();
+       oy = initialY;
+       ox = initialX;
+       oz = initialZ;
        double Tf = Math.sqrt(2*-initialY/-9.8);
-       if(env.getCameraYaw() > 180 && env.getCameraYaw() <= 360)
-           for(double i = Tf; i>0; i-= .01)
-           {
-               double Hf = -4.9*Tf*Tf+initialY;
-               double Xf = initialX + velocity * Tf;
-               this.setxyz(Xf,Hf,initialZ);
-               env.advanceOneFrame();
-               
-            }
-       else
-            for(double i = Tf; i>0; i-= .01)
-           {
-               double Hf = -4.9*Tf*Tf+initialY;
-               double Xf = initialX - velocity * Tf;
-               this.setxyz(Xf,Hf,initialZ);
-               env.advanceOneFrame(30);
-               
-            }
+       boolean flag = false;
+       for(double i = Tf; i>0; i-= .01)
+       {
+           double Hf = -4.9*Tf*Tf+initialY;
+           double Xf = initialX - velocity * Tf;
+           if (Hf-1> 0 || Hf +1 > 0)
+               if( check(Xf, initialZ))
+                    flag = true;
+           this.setxyz(Xf,Hf,initialZ);
+           env.advanceOneFrame(30);
+           
+        }
+  
+       return flag;
+    }
+    
+     /**
+     * Used by the throwBall method to check for bucket success
+     * returns true or false depending on it
+     */
+    private boolean check(double x, double z)
+    {
+        if (x < 3.5 & x > 2.5)
+            if ( z > 32 && z < 34)
+                return true;
+        return false;
         
         
     }

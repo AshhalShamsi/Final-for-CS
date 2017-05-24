@@ -14,20 +14,22 @@ import java.io.*;
  */
 public class mainGame
 {
-    // instance variables - replace the example below with your own
+    //initializes variables that are used by the Env3d library
     private static double ox,oy,oz;
     private static EnvAdvanced env;
-    private Room room;
+    private Room room;//creates a room Class that was found in Example Code but modified
     private Objc stuff, stuff2, fidget, test, bucket1;
-    private Ball ball1;
+    private Ball ball1;//creates a ball object that follows you aroung
     private Thread t = new Thread();
-    private final static double step = .25; 
-    private GraphiclessMenu menu;
+    private final static double step = .25;//sets the step that each press of WASD moves
+    private GraphiclessMenu menu;//creates a new Menu object that can be later called
+    private Score score;//creates a score object to keep track of the score
     /**
      * Constructor for objects of class mainGame
      */
     public mainGame() throws IOException
     {
+        //creates the room, and sets the textures
         room = new Room (45,10,35, "Mi cabeza es ROJO");
         room.setTextureEast("textures/wall.jpg");
         room.setTextureNorth("textures/wall.jpg");
@@ -35,64 +37,76 @@ public class mainGame
         room.setTextureWest("textures/wall.jpg");
         room.setTextureTop("textures/concrete.jpg");
         room.setTextureBottom("textures/floor/paving5.png");
-        stuff2 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket.obj",3,0,room.getDepth()/2);
-        stuff2.setRotateY(180);
+        
+        //creates the ball and bucket object that are used within the room
         ball1 = new Ball(512,"models/test/test.jpg", 5, 2, 8, 1 );
-        bucket1 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket.obj",room.getWidth()-3,0,room.getDepth()/2);
+        bucket1 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket.obj",3,0,room.getDepth()/2);
+        
         menu = new GraphiclessMenu();
-        ball1.setscale(.25);
-        //test = new Intensity_1(13, 13, 13);
+        score = new Score();
+        ball1.setscale(.25);//sets the scale of the ball to make it smaller
+        //initializes old instance variables
         ox = 0;
         oy =0;
         oz = -1;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return the sum of x and y 
+     *This is the "main" method of the game, this is where all the magic happens
      */
     public void play() throws InterruptedException, IOException
     {
-        // put your code here
-        // Position the camera
+        //creates a new Env enviornment
         env = new EnvAdvanced();
         boolean finished = false;
+        //sets the currrent room to the bucket room
         room.setCurrentRoom(env);
+        //sets the initial position
         env.setCameraXYZ(5, 5, 4);        
-        
-        //System.out.println(env.getCameraPitch());
+
         // Disable mouse and camera control
         env.setDefaultControl(finished);
-        env.addObject(stuff2);
         env.addObject(ball1);
         env.addObject(bucket1);
-        //env.addObject(test);
        
+        //runs the game loop until ESC is pressed
         while (env.getKey() != 1)
         {
-            //ball1.setxyz(env.getCameraX()-(5*Math.cos(env.getCameraPitch()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()-(5*Math.cos(env.getCameraYaw()*Math.PI/180)));
-            //ball1.setxyz(env.getCameraX() + (5*Math.cos(env.getMouseDX()*Math.PI/180)),  env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getMouseDY()*Math.PI/180)));
-            //ball1.setYaw(env.getCameraYaw());
-            env.advanceOneFrame();
-            // Position the camera
+            //displays the Score and Shot number
+            env.setDisplayStr("Score: " + score.getScore(),0,480);
+            env.setDisplayStr("Shots: " + score.getShots(),0,460);
+            env.advanceOneFrame();//advances one frame
+            
+            //if F2 is pressed magic happens
             if(env.getKey() == 60)
                 if (finished == false)
                     finished = true;
                 else
                     finished = false;
             
-            if(env.getKey() == 61)
-                ball1.throwBall(env,12);
                     
+            //F3 allows the ball to be thrown
+            if(env.getKey() == 61)
+            {
+               //checks if the ball landed in the bucket
+               boolean temp = ball1.throwBall(env,12);
+               if (temp)
+                    score.add(ball1.getox(),ball1.getoy(),ball1.getoz(),true,true);
+               else 
+                    score.addShots();
+                }
+            
+            //if F1 is pressed then the menu opens up
             if (env.getKey() == 59)
                 menu.useMenu(true);
-            move();
-            checkWall();
-            placeBall(7, 0, -1, 0);
+            
+            //if cheat mode is active than the move() method does not need to be called
+            if (finished == false)    
+                move();
+            checkWall();//checks for collisions with the wall
+            placeBall(7, 0, -1, 0);//places ball following the camera
           
-            env.setDefaultControl(finished);
+            env.setDefaultControl(finished);//sets cheat mode on or off
         }
         env.exit();
     }
@@ -120,7 +134,11 @@ public class mainGame
         
     }
     
-    
+ 
+ /**
+ *Checks for collisions with the walls so the player cannot leave
+ *
+ **/
  private void checkWall()
     {
         if (env.getCameraX() > room.getWidth()-2) {
@@ -135,7 +153,11 @@ public class mainGame
            revert();
         }       
     }    
-    
+
+ /**
+     *Moves the player if camera control is false
+     *(This Code was taken from an Example, but was altered to fit my needs)
+     **/
     public static void move(){
         ox = env.getCameraX();
         oy = env.getCameraY();
@@ -179,12 +201,15 @@ public class mainGame
 
 }
     
-
+ /**
+  * Is called if there is a collision between the wall and the player
+     **/
 public void revert(){
     env.setCameraXYZ(ox,oy,oz);
   
 }
-    
+
+//launches the main game without a need for instanitaing an object
 public static void main(String[] args) throws InterruptedException, IOException
     {  
         (new mainGame()).play();

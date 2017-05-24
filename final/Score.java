@@ -55,7 +55,7 @@ public class Score
      */
     public void add(double x, double y, double z, boolean made, boolean basket1){
         double points = 0; //the number of points scored this round
-        double basketX; //The x coordinate of the chosen basket
+        double basketX = 0; //The x coordinate of the chosen basket
         shots += 1;
         
         //Sees if the shot was made
@@ -65,9 +65,6 @@ public class Score
             //from the first basket.
             if (basket1){
                 //Bucket 1 is located at (42, 0, 32.5), so basktX = 42
-                basketX = 42;
-            }else{
-                //The other bucket is located at (3, 0, 32.5); basketX = 3
                 basketX = 3;
             }
             
@@ -96,6 +93,15 @@ public class Score
      */
     public int getShots(){
         return shots;
+    }
+    
+    /**
+     * Gets the # of shots
+     * @param none
+     * @return int the number of shots taken thus far
+     */
+    public void addShots(){
+        shots++;
     }
     
     /**
