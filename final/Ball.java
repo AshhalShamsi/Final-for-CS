@@ -194,7 +194,7 @@ public class Ball
        oz = initialZ;
        double Tf = Math.sqrt(2*-initialY/-9.8);
        boolean flag = false;
-       for(double i = Tf; i>0; i-= .01)
+       for(double i = 0; i<Tf; i+= .01)
        {
            double Hf = -4.9*i*i+initialY;
            double Xf = initialX - velocity * i;
