@@ -19,6 +19,9 @@ VERSION or DATE: Final Project Version #1
 
 DEPENDENCIES: env3d Graphics Library
 
+DAILY PROGRESS + PLAN:
+	-Open FinalProjectPaperThrowPlan.docx
+
 CLASSES WE USED
 BUT DID NOT CODE: - Room
 		  - Block
