@@ -137,10 +137,22 @@ public class Ball
         z = oz;
     }
     
-    public void throwBall(Env env, double velocity, double initX, double initY)
+    public void throwBall(Env env, double velocity)
     {
-        
-        
+       double initialY = this.getY();
+       double initialX = this.getX();
+       double initialZ = this.getZ();
+       double Tf = Math.sqrt(2*-initialY/-9.8);
+       for(double i = Tf; i>0; i-= .001)
+       {
+           double Hf = -4.9*Tf*Tf+initialY;
+           double Xf = initialX + velocity * Tf;
+           this.setX(Xf);
+           this.setY(Hf);
+           env.advanceOneFrame();
+           
+        }
+            
         
         
     }

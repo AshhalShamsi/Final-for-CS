@@ -54,8 +54,8 @@ public class Score
      * @return none
      */
     public void add(double x, double y, double z, boolean made, boolean basket1){
-        int points = 0; //the number of points scored this round
-        int basketX; //The x coordinate of the chosen basket
+        double points = 0; //the number of points scored this round
+        double basketX; //The x coordinate of the chosen basket
         shots += 1;
         
         //Sees if the shot was made
@@ -77,7 +77,7 @@ public class Score
                 
             }
             
-        score += points
+        score += points;
     }
     
     /**

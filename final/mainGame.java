@@ -83,6 +83,9 @@ public class mainGame
                 else
                     finished = false;
             
+            if(env.getKey() == 61)
+                ball1.throwBall(env,3);
+                    
             if (env.getKey() == 59)
                 menu.useMenu(true);
             move();
