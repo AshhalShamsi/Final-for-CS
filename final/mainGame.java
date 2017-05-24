@@ -36,7 +36,7 @@ public class mainGame
         room.setTextureTop("textures/concrete.jpg");
         room.setTextureBottom("textures/floor/paving5.png");
         stuff2 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket.obj",3,0,room.getDepth()/2);
-        stuff2.setRotateX(180);
+        stuff2.setRotateY(180);
         ball1 = new Ball(512,"models/test/test.jpg", 5, 2, 8, 1 );
         bucket1 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket.obj",room.getWidth()-3,0,room.getDepth()/2);
         menu = new GraphiclessMenu();
@@ -73,7 +73,7 @@ public class mainGame
         while (env.getKey() != 1)
         {
             //ball1.setxyz(env.getCameraX()-(5*Math.cos(env.getCameraPitch()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()-(5*Math.cos(env.getCameraYaw()*Math.PI/180)));
-            //ball1.setxyz(env.getCameraX() + (5*Math.cos(env.getMouseDX()*Math.PI/180)),  env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getMouseDY()*Math.PI/180)));
+            ball1.setxyz(env.getCameraX() + (5*Math.cos(env.getMouseDX()*Math.PI/180)),  env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getMouseDY()*Math.PI/180)));
             //ball1.setYaw(env.getCameraYaw());
             env.advanceOneFrame();
             // Position the camera
@@ -87,6 +87,7 @@ public class mainGame
                 menu.useMenu(true);
             move();
             checkWall();
+            //placeBall(10, 5, 5, 5);
           
             env.setDefaultControl(finished);
         }
@@ -100,7 +101,7 @@ public class mainGame
      * @param double offX -- Not sure
      * @param double offY -- The same as offX, but for the y axis
      * @param double offZ -- The same as offX, but for the z axis
-     */
+     **/
     public void placeBall(double followDist, double offX, double offY, double offZ){
         
         //Gets the X coordinate for the ball
@@ -108,11 +109,11 @@ public class mainGame
                   Math.cos(Math.toRadians(ball1.getRotateX())));
                 
         //Gets the y coordinate for the ball
-        ball1.setY((env.getCameraY() + offY) - followDist * //Math.sin(Math.toRadians(ball1.getRotateX())));
+        ball1.setY((env.getCameraY() + offY) - followDist * Math.sin(Math.toRadians(ball1.getRotateX())));
         
         //Gets the z coordinate for the ball
         ball1.setZ((env.getCameraZ() + offZ) - followDist * Math.cos(Math.toRadians(env.getCameraYaw())) *
-                  Math.cos(Math.toRadians(ball1.getRotateX()))));
+                  Math.cos(Math.toRadians(ball1.getRotateX())));
         
     }
     

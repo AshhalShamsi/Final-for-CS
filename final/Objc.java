@@ -12,9 +12,9 @@ import java.io.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Objc extends EnvNode
+public class Objc
 {
-    protected double x,y,z, roomWidth, roomDepth, scale, ox,oy,oz;
+    protected double x,y,z, roomWidth, roomDepth, scale, ox,oy,oz, rotateX, rotateY;
     private String texture, model;
     public Objc(String txt, String mod, double e, double f, double g)
     {
@@ -24,6 +24,8 @@ public class Objc extends EnvNode
         texture = txt;
         model = mod;
         scale = 1;
+        rotateX = 0;
+        rotateY = 0;
     }
 
     
@@ -100,13 +102,13 @@ public class Objc extends EnvNode
         setRotateX(Math.toDegrees(Math.asin((this.getY()-gameObj.getY())/this.distance(gameObj))));        
     }
     
-    public void setRotateY(float stuff)
+    public void setRotateY(double stuff)
     {
         rotateY = stuff;
         
     }
     
-     public void setRotateX(float stuff)
+     public void setRotateX(double stuff)
     {
         rotateX = stuff;
         

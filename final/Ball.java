@@ -7,7 +7,7 @@ public class Ball extends Objc
 {
     private int mass;
     //private String texture;
-    private double x,y,z,scale, rotateZ, ox,oy,oz;
+    private double x,y,z,scale, rotateZ, rotateX, ox,oy,oz;
     /**
      * Default constructor for objects of class Ball
      */
@@ -17,6 +17,7 @@ public class Ball extends Objc
         this.mass = mass2;
         super.scale = scle;
         rotateZ = 0;
+        rotateX = 0;
     }
     
     public void setYaw(double yee)
@@ -107,6 +108,16 @@ public class Ball extends Objc
     public void revert()
     {
         super.revert();
+    }
+    
+    /**
+     * Payton here --> Gets the rotateX (mostly for the placeBall method
+     * which may or may not even work)
+     * @param none
+     * @return double -- rotateX
+     */
+    public double getRotateX(){
+        return rotateX;
     }
      
     
