@@ -12,7 +12,7 @@ import java.io.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Objc
+public class Objc extends EnvNode
 {
     protected double x,y,z, roomWidth, roomDepth, scale, ox,oy,oz, rotateX, rotateY;
     private String texture, model;
@@ -24,8 +24,6 @@ public class Objc
         texture = txt;
         model = mod;
         scale = 1;
-        rotateX = 0;
-        rotateY = 0;
     }
 
     
