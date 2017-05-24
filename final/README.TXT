@@ -41,3 +41,12 @@ USER INSTRUCTIONS: Instructions are provided through the menu, however, the clif
 		     for troubleshooting code, but since they can be kind of fun we
 		     decided not to remove them. Just be aware that these were left
 		     intentionally and are not glitches.
+
+THINGS WE WROTE BUT
+DID NOT HAVE 
+TIME TO IMPLEMENT: Wind - Would have blown the ball off course, so that the user would have
+		          had to adjust to the wind.
+		   File I/O - In the score class, the idea was that the top 10 scores would
+		   	      be written into a file and saved.
+		   Intensity - The user was supposed to be able to pick how hard they wanted
+		   	       to throw the ball.
