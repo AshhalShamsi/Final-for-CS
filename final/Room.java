@@ -194,6 +194,13 @@ public class Room
         return width;
     }
     
+    /**
+     * Accessor for the room's dimensions
+     */
+    public double getHeight(){
+        return height;
+    }
+    
     
     /**
      * Accessor for room's dimension

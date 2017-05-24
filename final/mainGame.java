@@ -24,6 +24,7 @@ public class mainGame
     private final static double step = .25;//sets the step that each press of WASD moves
     private GraphiclessMenu menu;//creates a new Menu object that can be later called
     private Score score;//creates a score object to keep track of the score
+    private Intensity_1 intensity; //The intensity object.
     /**
      * Constructor for objects of class mainGame
      */
@@ -41,6 +42,7 @@ public class mainGame
         //creates the ball and bucket object that are used within the room
         ball1 = new Ball(512,"models/test/test.jpg", 5, 2, 8, 1 );
         bucket1 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket.obj",3,0,room.getDepth()/2);
+        intensity = new Intensity_1(3, room.getHeight() - 5, room.getDepth() / 2 - 5);
         
         menu = new GraphiclessMenu();
         score = new Score();
@@ -68,6 +70,7 @@ public class mainGame
         env.setDefaultControl(finished);
         env.addObject(ball1);
         env.addObject(bucket1);
+        env.addObject(intensity);
        
         //runs the game loop until ESC is pressed
         while (env.getKey() != 1)
@@ -84,12 +87,21 @@ public class mainGame
                 else
                     finished = false;
             
+            //Increases the intensity
+            if (env.getKey() == Keyboard.KEY_UP){
+                intensity.increase();
+            }
+            
+            //Decreases the intensity
+            if (env.getKey() == Keyboard.KEY_DOWN){
+                intensity.decrease();
+            }
                     
             //F3 allows the ball to be thrown
             if(env.getKey() == 61)
             {
                //checks if the ball landed in the bucket
-               boolean temp = ball1.throwBall(env,12);
+               boolean temp = ball1.throwBall(env,intensity.getIntensity());
                if (temp)
                     score.add(ball1.getox(),ball1.getoy(),ball1.getoz(),true,true);
                else 
