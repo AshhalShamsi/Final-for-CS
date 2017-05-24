@@ -18,23 +18,23 @@ public class Instructions
     public static void setUp(){
         //page1 = the first page of instructions
         String page1 = "Welcome to the Paper Toss Game!\n\nThe objective of this game is to throw the paper ball into";
-        page1 += " the paper waste basket successfully. \n\nTo start the game, click start and move around the office";
-        page1 += " building until you find a paper waste basket.\n\nHit space to stop.";
+        page1 += " the paper waste basket successfully. \nTo start playing the game,  move around the rooom";
+        page1 += "  until you find a paper waste basket.\n";
         
         //page2 = the second page of instructions
-        String page2 = "Once you're stopped, a wind speed will be displayed. Use the arrow keys (ARE WE USING WASD?)\n";
-        page2 += "to turn yourself towards or away from the wind.\n\nHit space to once you like you're angle.";
+        String page2 = "Use WASD to move yourself around the room, and use the mouse to turn yourself left and right.\n";
+        page2 += "Once you're in a position in front of the waste basket, click F3 to throw.\n";
         
         //page3 = the third page of instructions
-        String page3 = "Now, an intensity bar should be displayed. Use the up and down arrow keys to \n";
-        page3 += "increase or decrease the intensity of your throw.\n\nHit space once you're at the right ";
-        page3 += "intensity.";
+        String page3 = "If the basket is made, points will be added to your score.\n\nThe number of points you receive";
+        page3 += " depends on how far away you were from the basket when the ball\nwas throws. You get more points from";
+        page3 += "being farther away from the basket.\n Good Luck!";
         
         //page4 = the fourth page of instructions
-        String page4 = "The ball will be throws according to how you threw it, and will land either inside or \n";
-        page4 += "outside of the wastepaper basket.\n\nIf your ball went in, your score will increase by 1. \n";
-        page4 += "If your ball did not land in the basket, your game will be over and we'll check to see if\n";
-        page4 += "your score was a Top Score.\n\nClick F1 to access the menu during gameplay.\n\nGood Luck!";
+        String page4 = "Controls:\n";
+        page4 += "Click esc to force the program to quit.\n";
+        page4 += "Use WASD to move and the mouse cursor to turn.\n";
+        page4 += "Press F1 to access the menu during gameplay.\nPress F3 to throw the ball.";
         
         //instructions = a list of all pages of instructions
         instructions = new String[]{page1, page2, page3, page4};
