@@ -40,7 +40,7 @@ public class mainGame
         ball1 = new Ball(512,"models/test/test.jpg", 5, 2, 8, 1 );
         bucket1 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket.obj",room.getWidth()-3,0,room.getDepth()/2);
         menu = new GraphiclessMenu();
-        ball1.setscale(5);
+        ball1.setscale(1);
         //test = new Intensity_1(13, 13, 13);
         ox = 0;
         oy =0;
@@ -73,7 +73,7 @@ public class mainGame
         while (env.getKey() != 1)
         {
             //ball1.setxyz(env.getCameraX()-(5*Math.cos(env.getCameraPitch()*Math.PI/180)), env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()-(5*Math.cos(env.getCameraYaw()*Math.PI/180)));
-            ball1.setxyz(env.getCameraX() + (5*Math.cos(env.getMouseDX()*Math.PI/180)),  env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getMouseDY()*Math.PI/180)));
+            //ball1.setxyz(env.getCameraX() + (5*Math.cos(env.getMouseDX()*Math.PI/180)),  env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)), env.getCameraZ()+(5*Math.cos(env.getMouseDY()*Math.PI/180)));
             //ball1.setYaw(env.getCameraYaw());
             env.advanceOneFrame();
             // Position the camera
@@ -87,7 +87,7 @@ public class mainGame
                 menu.useMenu(true);
             move();
             checkWall();
-            //placeBall(10, 5, 5, 5);
+            placeBall(7, 0, -1, 0);
           
             env.setDefaultControl(finished);
         }

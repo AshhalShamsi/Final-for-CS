@@ -1,23 +1,26 @@
-
+import env3d.Env;
 
 /**
  *This is the ball class
  */
-public class Ball extends Objc
+public class Ball
 {
     private int mass;
-    //private String texture;
+    private String texture;
     private double x,y,z,scale, rotateZ, rotateX, ox,oy,oz;
     /**
      * Default constructor for objects of class Ball
      */
     public Ball(int mass2, String type2, double g, double e, double f, double scle)
     {
-        super(type2,"models/ball/Ball.obj",g,e,f);
         this.mass = mass2;
-        super.scale = scle;
-        rotateZ = 0;
+        texture = type2;
+        x = g;
+        y = e;
+        z = f;
+        scale = scle;
         rotateX = 0;
+        rotateZ = 0;
     }
     
     public void setYaw(double yee)
@@ -25,13 +28,19 @@ public class Ball extends Objc
         rotateZ = yee;
         
     }
-
+    
+    public void settype(String type2){
+        texture = type2;
+    }
     
     public double getScale()
     {
         return this.scale;
     }
     
+    public void setscale(double scale2){
+        scale = scale2;
+    }
     
     public void setmass(int mass2)
     {
@@ -43,7 +52,15 @@ public class Ball extends Objc
         return this.mass;
     }
     
-    
+    /**
+      * Payton here --> Sets the x coordinate
+      * @param double --> The new x coordinate
+      * @return none
+      */
+     public void setX(double e){
+         ox= x;
+         x = e;
+     }
     
     /**
      * Payton here --> Gets the x coordinate
@@ -51,7 +68,7 @@ public class Ball extends Objc
      * @return double - The x coordinate
      */
     public double getX(){
-        return super.x;
+        return x;
     }
     
     /**
@@ -60,7 +77,8 @@ public class Ball extends Objc
      * @return none
      */
     public void setY(double f){
-        super.setY(f);
+        oy = y;
+        y = f;
     }
     
     /**
@@ -69,7 +87,7 @@ public class Ball extends Objc
      * @return double - The y coordinate
      */
     public double getY(){
-        return super.y;
+        return y;
     }
     
     /**
@@ -78,7 +96,8 @@ public class Ball extends Objc
      * @return none
      */
     public void setZ(double g){
-        super.setZ(g);
+        oz = z;
+        z = g;
     }
     
     /**
@@ -87,7 +106,7 @@ public class Ball extends Objc
      * @return double --> The z coordinate
      */
     public double getZ(){
-        return super.z;
+        return z;
     }
     
     /**
@@ -98,8 +117,14 @@ public class Ball extends Objc
      * @param double --> The new z coordinate
      * @return none
      */
-    public void setxyz(double e, double f, double g){
-        super.setCoordinates(e,f,g);
+    public void setxyz (double g, double e, double f)
+     {
+         ox = x;
+         oy = y;
+         oz = z;
+         x = g;
+         y = e;
+         z = f;
     }
     
     /**
@@ -107,19 +132,18 @@ public class Ball extends Objc
      */
     public void revert()
     {
-        super.revert();
+        x = ox;
+        y = oy;
+        z = oz;
     }
     
-    /**
-     * Payton here --> Gets the rotateX (mostly for the placeBall method
-     * which may or may not even work)
-     * @param none
-     * @return double -- rotateX
-     */
-    public double getRotateX(){
-        return rotateX;
+    public void throwBall(Env env, double velocity, double initX, double initY)
+    {
+        
+        
+        
+        
     }
-     
     
     /**
      * Payton here --> Sets the texture (in case you change it)
@@ -127,7 +151,7 @@ public class Ball extends Objc
      * @return none
      */
     public void setTexture(String txt){
-        super.setTexture(txt);
+        texture = txt;
     }
     
     /**
@@ -136,7 +160,16 @@ public class Ball extends Objc
      * @return String the texture
      */
     public String getTexture(){
-        return super.getTexture();
+        return texture;
+    }
+    
+    /**
+     * Payton herre --> Returns the rotation of X for the placeBall method
+     * @param none
+     * @return double -- rotateX
+     */
+    public double getRotateX(){
+        return rotateX;
     }
     
 }

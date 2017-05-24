@@ -85,7 +85,7 @@ public class Objc
     /**
      * Turn this object to face another game object
      * @param gameObj to object to face 
-     */
+     
     public void turnToFace(Objc gameObj) 
     {
         this.setRotateY(Math.toDegrees(Math.atan2(gameObj.getX()-this.getX(),gameObj.getZ()-this.getZ())));
@@ -95,13 +95,14 @@ public class Objc
      /**
      * Turn this object to face another game object
      * @param gameObj to object to face 
-     */
+     *
     public void turnToFace(Ball gameObj) 
     {
         setRotateY(Math.toDegrees(Math.atan2(gameObj.getX()-this.getX(),gameObj.getZ()-this.getZ())));
         setRotateX(Math.toDegrees(Math.asin((this.getY()-gameObj.getY())/this.distance(gameObj))));        
     }
     
+    */
     public void setRotateY(double stuff)
     {
         rotateY = stuff;
