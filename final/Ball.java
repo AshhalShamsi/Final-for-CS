@@ -143,16 +143,24 @@ public class Ball
        double initialX = this.getX();
        double initialZ = this.getZ();
        double Tf = Math.sqrt(2*-initialY/-9.8);
-       for(double i = Tf; i>0; i-= .001)
-       {
-           double Hf = -4.9*Tf*Tf+initialY;
-           double Xf = initialX + velocity * Tf;
-           this.setX(Xf);
-           this.setY(Hf);
-           env.advanceOneFrame();
-           
-        }
-            
+       if(env.getCameraYaw() > 180 && env.getCameraYaw() <= 360)
+           for(double i = Tf; i>0; i-= .01)
+           {
+               double Hf = -4.9*Tf*Tf+initialY;
+               double Xf = initialX + velocity * Tf;
+               this.setxyz(Xf,Hf,initialZ);
+               env.advanceOneFrame();
+               
+            }
+       else
+            for(double i = Tf; i>0; i-= .01)
+           {
+               double Hf = -4.9*Tf*Tf+initialY;
+               double Xf = initialX - velocity * Tf;
+               this.setxyz(Xf,Hf,initialZ);
+               env.advanceOneFrame(30);
+               
+            }
         
         
     }
