@@ -8,7 +8,7 @@ public class Intensity_1 extends Objc
 {
     /** Instance Variable */
     private double intensity; //How strongly the player will be throwing the ball
-    private double rotateZ; //Me trying to get the arrow to be upright
+    private double rotateZ, rotateY; //Me trying to get the arrow to be upright
 
     /**
      * Constructor for Intensity
@@ -32,6 +32,7 @@ public class Intensity_1 extends Objc
         intensity = 10;
         
         rotateZ = 90;
+        rotateY = 90;
     }
 
     /**

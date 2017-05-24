@@ -42,7 +42,7 @@ public class mainGame
         //creates the ball and bucket object that are used within the room
         ball1 = new Ball(512,"models/test/test.jpg", 5, 2, 8, 1 );
         bucket1 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket.obj",3,0,room.getDepth()/2);
-        intensity = new Intensity_1(3, room.getHeight() - 5, room.getDepth() / 2 - 5);
+        intensity = new Intensity_1(0, room.getHeight() - 5, room.getDepth() / 2 - 3);
         
         menu = new GraphiclessMenu();
         score = new Score();
