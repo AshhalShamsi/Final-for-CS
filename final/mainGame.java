@@ -93,6 +93,29 @@ public class mainGame
         env.exit();
     }
     
+     /**
+     * Payton Here --> Something to get the ball to follow us arround. I hope it works.
+     * 
+     * @param double followDist -- How far away you want the ball from you
+     * @param double offX -- Not sure
+     * @param double offY -- The same as offX, but for the y axis
+     * @param double offZ -- The same as offX, but for the z axis
+     */
+    public void placeBall(double followDist, double offX, double offY, double offZ){
+        
+        //Gets the X coordinate for the ball
+        ball1.setX((env.getCameraX() + offX) - followDist * Math.sin(Math.toRadians(env.getCameraYaw())) *
+                  Math.cos(Math.toRadians(ball1.getRotateX())));
+                
+        //Gets the y coordinate for the ball
+        ball1.setY((env.getCameraY() + offY) - followDist * //Math.sin(Math.toRadians(ball1.getRotateX())));
+        
+        //Gets the z coordinate for the ball
+        ball1.setZ((env.getCameraZ() + offZ) - followDist * Math.cos(Math.toRadians(env.getCameraYaw())) *
+                  Math.cos(Math.toRadians(ball1.getRotateX()))));
+        
+    }
+    
     
  private void checkWall()
     {
