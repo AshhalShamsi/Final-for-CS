@@ -14,7 +14,8 @@ import java.io.*;
 public class Score
 {
     /** Instance Variables **/
-    private int score; //How many consecutive shots they've made (which is their score)
+    private int score; //The cummulative sum of the distances at which the baskets were scored
+    private int shots; //The total number of shots takes
     private String name; //Their name
     private String[] topScores; //Top 10 scores {Format: Name1, Score1, Name2, Score2...Score10);
 
@@ -26,6 +27,7 @@ public class Score
      */
     public Score() throws IOException{
         score = 0; //Sets initial score
+        shots = 0; //No shots have been taken yet
         name = "No1"; //Sets initial name (which is nonexistant: No1 = No-one)
         
         //Alright, here's the fun part:
@@ -43,11 +45,39 @@ public class Score
     
     /**
      * Adds one to score (to be called when you want to update score)
-     * @param none
+     * @param double -- the x coordinate of the player
+     * @param double -- the y coordinate of the player
+     * @param double -- the z coordinate of the player
+     * @param boolean -- Whether or not the shot was made
+     * @param boolean -- Whether or not the shot was in basket 1
+     *                   (the alternative being basket 2)
      * @return none
      */
-    public void add(){
-        score += 1;
+    public void add(double x, double y, double z, boolean made, boolean basket1){
+        int points = 0; //the number of points scored this round
+        int basketX; //The x coordinate of the chosen basket
+        shots += 1;
+        
+        //Sees if the shot was made
+        if (made){
+            
+            //if scored in the first basket, calculates distance
+            //from the first basket.
+            if (basket1){
+                //Bucket 1 is located at (42, 0, 32.5), so basktX = 42
+                basketX = 42;
+            }else{
+                //The other bucket is located at (3, 0, 32.5); basketX = 3
+                basketX = 3;
+            }
+            
+            //Calculates the points using the pythagorean theorem
+            points = ((x - basketX) * (x - basketX)) + (y * y) + ((z - 32.5) * (z - 32.5));
+            points = Math.sqrt(points);
+                
+            }
+            
+        score += points
     }
     
     /**
@@ -57,6 +87,15 @@ public class Score
      */
     public int getScore(){
         return score;
+    }
+    
+    /**
+     * Gets the # of shots
+     * @param none
+     * @return int the number of shots taken thus far
+     */
+    public int getShots(){
+        return shots;
     }
     
     /**
