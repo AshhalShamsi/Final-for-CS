@@ -108,6 +108,7 @@ public class mainGame
           
             env.setDefaultControl(finished);//sets cheat mode on or off
         }
+        score.checkScore();
         env.exit();
     }
     
