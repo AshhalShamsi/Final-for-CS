@@ -14,7 +14,7 @@ import java.io.*;
  */
 public class Objc extends EnvNode
 {
-    protected double x,y,z, roomWidth, roomDepth, scale, ox,oy,oz, rotateX, rotateY;
+    protected double x,y,z, roomWidth, roomDepth, scale, ox,oy,oz;
     private String texture, model;
     public Objc(String txt, String mod, double e, double f, double g)
     {
@@ -100,13 +100,13 @@ public class Objc extends EnvNode
         setRotateX(Math.toDegrees(Math.asin((this.getY()-gameObj.getY())/this.distance(gameObj))));        
     }
     
-    public void setRotateY(double stuff)
+    public void setRotateY(float stuff)
     {
         rotateY = stuff;
         
     }
     
-     public void setRotateX(double stuff)
+     public void setRotateX(float stuff)
     {
         rotateX = stuff;
         

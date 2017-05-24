@@ -36,7 +36,7 @@ public class mainGame
         room.setTextureTop("textures/concrete.jpg");
         room.setTextureBottom("textures/floor/paving5.png");
         stuff2 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket.obj",3,0,room.getDepth()/2);
-        stuff2.rotateX(180);
+        stuff2.setRotateX(180);
         ball1 = new Ball(512,"models/test/test.jpg", 5, 2, 8, 1 );
         bucket1 = new Objc("models/bucket/bucket1.jpg","models/bucket/bucket.obj",room.getWidth()-3,0,room.getDepth()/2);
         menu = new GraphiclessMenu();
