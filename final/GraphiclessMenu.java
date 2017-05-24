@@ -64,7 +64,6 @@ public class GraphiclessMenu
         //the menu (if so, need their name, and if not,
         //can't let them play because they should already
         //be playing)
-        System.out.println(this);
         if (!playingGame){
             System.out.print("Enter your name: ");
             myScore.setName(keyboard.nextLine());
