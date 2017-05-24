@@ -198,7 +198,7 @@ public class Ball
        {
            double Hf = -4.9*i*i+initialY;
            double Xf = initialX - velocity * i;
-           if (Hf-1> 0 || Hf +1 > 0)
+           if (Hf == .05)
                if( check(Xf, initialZ))
                     flag = true;
            this.setxyz(Xf,Hf,initialZ);
