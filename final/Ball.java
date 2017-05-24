@@ -196,8 +196,8 @@ public class Ball
        boolean flag = false;
        for(double i = Tf; i>0; i-= .01)
        {
-           double Hf = -4.9*Tf*Tf+initialY;
-           double Xf = initialX - velocity * Tf;
+           double Hf = -4.9*i*i+initialY;
+           double Xf = initialX - velocity * i;
            if (Hf-1> 0 || Hf +1 > 0)
                if( check(Xf, initialZ))
                     flag = true;
