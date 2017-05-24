@@ -63,6 +63,15 @@ public class Intensity_1 extends Objc
         super.setscale((intensity) / 10.0);        
     }
     
+     /**
+    * Sets the intensity
+    *@param int the new intensity
+    *@return none
+    */
+    public void setIntensity(int intense){
+        intensity = intense;
+    }
+    
     /**
      * Gets the intensity
      * @param none
