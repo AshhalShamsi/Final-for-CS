@@ -71,6 +71,7 @@ public class mainGame
         env.addObject(ball1);
         env.addObject(bucket1);
         env.addObject(intensity);
+        env.setResolution(1280,720,10);
        
         //runs the game loop until ESC is pressed
         while (env.getKey() != 1)
@@ -78,6 +79,7 @@ public class mainGame
             //displays the Score and Shot number
             env.setDisplayStr("Score: " + score.getScore(),0,480);
             env.setDisplayStr("Shots: " + score.getShots(),0,460);
+            System.out.println(env.getCameraYaw() +"--" + env.getCameraPitch());
             env.advanceOneFrame();//advances one frame
             
             //if F2 is pressed magic happens
@@ -122,7 +124,7 @@ public class mainGame
             if (finished == false)    
                 move();
             checkWall();//checks for collisions with the wall
-            placeBall(7, 0, -1, 0);//places ball following the camera
+            placeBall(5, 0, -1, 0);//places ball following the camera
           
             env.setDefaultControl(finished);//sets cheat mode on or off
         }
@@ -145,7 +147,8 @@ public class mainGame
                   Math.cos(Math.toRadians(ball1.getRotateX())));
                 
         //Gets the y coordinate for the ball
-        ball1.setY((env.getCameraY() + offY) - followDist * Math.sin(Math.toRadians(ball1.getRotateX())));
+        ball1.setY(env.getCameraY()+(5*Math.sin(env.getCameraPitch()*Math.PI/180)));
+        //ball1.setY((env.getCameraY() + offY) - followDist * Math.sin(Math.toRadians(ball1.getRotateX())));
         
         //Gets the z coordinate for the ball
         ball1.setZ((env.getCameraZ() + offZ) - followDist * Math.cos(Math.toRadians(env.getCameraYaw())) *

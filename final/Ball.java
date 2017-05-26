@@ -193,15 +193,19 @@ public class Ball
        ox = initialX;
        oz = initialZ;
        double Tf = Math.sqrt(2*-initialY/-9.8);
+       double xv = velocity * Math.cos(Math.atan(this.getZ()/this.getX()));
+       double zv = velocity * Math.sin(Math.atan(this.getZ()/this.getX()));
        boolean flag = false;
+       
        for(double i = 0; i<Tf; i+= .01)
        {
            double Hf = -4.9*i*i+initialY;
-           double Xf = initialX - velocity * i;
+           double Xf = initialX - xv * i;
+           double Zf = initialZ + zv * i;
            if (Hf == .05)
                if( check(Xf, initialZ))
                     flag = true;
-           this.setxyz(Xf,Hf,initialZ);
+           this.setxyz(Xf,Hf,Zf);
            env.advanceOneFrame(30);
            
         }
