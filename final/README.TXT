@@ -54,6 +54,4 @@ USER INSTRUCTIONS: Instructions are provided through the menu, however, the clif
 THINGS WE WROTE BUT
 DID NOT HAVE 
 TIME TO IMPLEMENT: Wind - Would have blown the ball off course, so that the user would have
-		          had to adjust to the wind.
-		   Intensity - The user was supposed to be able to pick how hard they wanted
-		   	       to throw the ball.
+		          had to adjust their to account for the wind.
