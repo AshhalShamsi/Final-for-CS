@@ -220,9 +220,9 @@ public class Score
     /**
      * Sees if score is a top score
      * @param none
-     * @return none
+     * @return boolean
      */
-    public void checkScore(){
+    public boolean checkScore(){
         boolean isTop = false; //To see if the current score is higher than any score in list
                                //Note: If equal to, earlier score remains higher
         
@@ -237,6 +237,8 @@ public class Score
         if (isTop == true){
             this.addScore(); //Adds the new score into scores
         }
+        
+        return isTop;
     }
     
     /**

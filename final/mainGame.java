@@ -79,7 +79,7 @@ public class mainGame
             //displays the Score and Shot number
             env.setDisplayStr("Score: " + score.getScore(),0,480);
             env.setDisplayStr("Shots: " + score.getShots(),0,460);
-            System.out.println(env.getCameraYaw() +"--" + env.getCameraPitch());
+            //System.out.println(env.getCameraX()+"--"+env.getCameraZ());
             env.advanceOneFrame();//advances one frame
             
             //if F2 is pressed magic happens
