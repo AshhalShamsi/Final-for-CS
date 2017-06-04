@@ -184,7 +184,7 @@ public class Ball
      * @param env initialization, horizontal velocity
      * returns either true or false if the ball hit the bucket
      */
-    public boolean throwBall(Env env, double velocity)
+    public boolean throwBall(Env env, double velocity, float wind)
     {
        double initialY = this.getY();
        double initialX = this.getX();
@@ -196,14 +196,14 @@ public class Ball
        double xv = velocity * Math.cos(Math.atan((this.getZ()-env.getCameraZ())/(this.getX()-env.getCameraX())));
        double zv = velocity * Math.sin(Math.atan((this.getZ()-env.getCameraZ())/(this.getX()-env.getCameraX())));
        boolean flag = false;
-       if (env.getCameraYaw() >= 0){
+       if (env.getCameraYaw() > 0){
            double Xi = initialX - xv * Tf;
            double Zi = initialZ - zv * Tf;
            for(double i = 0; i<Tf; i+= .01)
            {
                double Hf = -4.9*i*i+initialY;
                double Xf = initialX - xv * i;
-               double Zf = initialZ - zv * i;
+               double Zf = initialZ - zv * i + i*wind;
                if (Hf == .05)
                    if( check(Xf, initialZ))
                         flag = true;
@@ -221,7 +221,7 @@ public class Ball
            {
                double Hf = -4.9*i*i+initialY;
                double Xf = initialX + xv * i;
-               double Zf = initialZ + zv * i;
+               double Zf = initialZ + zv * i + i*wind;
                if (Hf == .05)
                    if( check(Xf, initialZ))
                         flag = true;

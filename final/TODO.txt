@@ -1,0 +1,15 @@
+1. Texture for bucket
+2. Graphics Menu
+3. Sound
+4. Check Score
+   4a. Figure out height
+5. Particles
+   5a. May need hashmaps
+6. 3d trig with ball collisions
+7. Jar File creation
+8. texture the ball
+9. add buckets
+
+MAYBE LIST
+10. Make a player
+11. offset the ball a bit

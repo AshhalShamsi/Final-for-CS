@@ -128,7 +128,7 @@ public class GraphiclessMenu
         //the game, launches the game for them.
         if (choice == '4' && !playingGame){
             firstUse = false;
-            mainGame.main(new String[4]);
+            Game.main(new String[4]);
         }
 
         System.exit(0);
